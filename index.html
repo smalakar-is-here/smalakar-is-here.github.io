@@ -1,713 +1,428 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Swagotam Malakar — Portfolio</title>
-  <meta name="description" content="Author • Tech Enthusiast • CS Graduate. Researcher at CENTeR (United International University), Dhaka, Bangladesh." />
-  <meta property="og:title" content="Swagotam Malakar — Portfolio" />
-  <meta property="og:description" content="Projects, research, certifications, and ways to contact me." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://smalakar-is-here.github.io" />
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg: #ffffff;
-      --bg-secondary: #f8fafc;
-      --fg: #0f172a;
-      --muted: #64748b;
-      --card: #ffffff;
-      --accent: #3b82f6;
-      --accent-hover: #2563eb;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.06);
-      --shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-      --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-      --max-width: 1100px;
-      --radius: 16px;
-      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0f14" />
+    <meta name="description" content="Swagotam Malakar — NLP researcher focusing on bias detection and correction in Bengali news." />
+    <title>Swagotam Malakar — NLP Researcher</title>
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --bg-secondary: #1e293b;
-        --fg: #f1f5f9;
-        --muted: #94a3b8;
-        --card: #1e293b;
-        --accent: #60a5fa;
-        --accent-hover: #3b82f6;
-        --border: #334155;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
-        --shadow: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
-        --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.5), 0 10px 10px -5px rgba(0,0,0,0.4);
-      }
-    }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
-    * { box-sizing: border-box; }
-    
-    html { scroll-behavior: smooth; }
-    
-    html, body { 
-      margin: 0; 
-      padding: 0; 
-      background: var(--bg); 
-      color: var(--fg); 
-    }
-    
-    body { 
-      font: 16px/1.6 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
 
-    a { 
-      color: var(--accent); 
-      text-decoration: none; 
-      transition: all 0.2s ease;
-    }
-    
-    a:hover { 
-      color: var(--accent-hover);
-      text-decoration: none; 
-    }
-        /* Header Styles */
-    header { 
-      padding: 3rem 1rem 1.5rem; 
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    header::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-      opacity: 0.03;
-      pointer-events: none;
-    }
+    <!-- Favicon (replace) -->
+    <link rel="icon" href="assets/img/avatar.jpg" />
+  </head>
+  <body>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true">
+      <div class="scroll-progress__bar"></div>
+    </div>
 
-    .container { 
-      max-width: var(--max-width); 
-      margin: 0 auto; 
-      padding: 0 1.5rem; 
-    }
+    <!-- Header -->
+    <header class="site-header" id="top">
+      <div class="container header-wrap">
+        <a href="#home" class="brand" aria-label="Go to home">
+          <span class="brand__mark">SM</span>
+          <span class="brand__name">Swagotam Malakar</span>
+        </a>
 
-    .hero { 
-      display: grid; 
-      grid-template-columns: 120px 1fr; 
-      gap: 1.5rem; 
-      align-items: center; 
-    }
-    
-    .avatar { 
-      width: 120px; 
-      height: 120px; 
-      border-radius: 50%; 
-      background: var(--gradient);
-      padding: 3px;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .avatar img {
-      width: calc(100% - 6px);
-      height: calc(100% - 6px);
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--bg);
-    }
-    
-    .avatar:hover {
-      transform: scale(1.05);
-    }
-    
-    h1 { 
-      font-size: 2.5rem; 
-      font-weight: 700;
-      margin: 0; 
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-    
-    .tagline { 
-      color: var(--muted); 
-      margin-top: 0.5rem; 
-      font-weight: 500; 
-      font-size: 1.1rem;
-    }
-    
-    .location { 
-      color: var(--muted); 
-      font-size: 0.95rem; 
-      margin-top: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .location::before {
-      content: "📍";
-    }
+        <nav class="nav" aria-label="Primary">
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">
+            <span class="sr-only">Toggle menu</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="nav__list" id="nav-menu">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#writing">Writing</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="nav__ctas">
+              <a class="btn btn--ghost" href="assets/Swagotam_Malakar_CV.pdf" target="_blank" rel="noopener">CV</a>
+              <button class="btn btn--icon theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <span class="sr-only">Toggle theme</span>
+                <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5 5L3.5 3.5M20.5 20.5L19 19M19 5l1.5-1.5M3.5 20.5L5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="4" fill="currentColor" /></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/></svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    /* Navigation */
-    nav { 
-      margin-top: 1.5rem; 
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    
-    nav a { 
-      padding: 0.5rem 1rem;
-      font-weight: 600; 
-      font-size: 0.95rem; 
-      color: var(--fg); 
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      transition: all 0.2s ease;
-    }
-    
-    nav a:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
-    }
+    <!-- Hero -->
+    <section class="hero" id="home" aria-label="Intro">
+      <div class="hero__bg">
+        <div class="gradient"></div>
+        <div class="noise"></div>
+        <svg class="divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,32L80,48C160,64,320,96,480,90.7C640,85,800,43,960,37.3C1120,32,1280,64,1360,80L1440,96V0H0Z" fill="currentColor" />
+        </svg>
+      </div>
 
-    /* Section Styles */
-    section { 
-      padding: 3rem 0 1.5rem; 
-    }
-    
-    section:nth-child(even) {
-      background: var(--bg-secondary);
-    }
-    
-    h2 { 
-      font-size: 1.75rem; 
-      font-weight: 700;
-      margin: 0 0 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-        h2::before {
-      content: '';
-      display: inline-block;
-      width: 4px;
-      height: 24px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    /* Card Styles */
-    .card { 
-      background: var(--card); 
-      border: 1px solid var(--border); 
-      border-radius: var(--radius); 
-      padding: 1.5rem; 
-      margin: 1rem 0; 
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-    
-    .card strong {
-      font-size: 1.1rem;
-      color: var(--fg);
-    }
-
-    /* Grid Layouts */
-    .grid-2 { 
-      display: grid; 
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 1rem; 
-    }
-    
-    @media (max-width: 768px) { 
-      .hero { 
-        grid-template-columns: 80px 1fr;
-        gap: 1rem;
-      }
-      .avatar { width: 80px; height: 80px; }
-      h1 { font-size: 1.875rem; }
-      .grid-2 { grid-template-columns: 1fr; }
-      nav { gap: 0.375rem; }
-      nav a { padding: 0.375rem 0.75rem; font-size: 0.875rem; }
-    }
-
-    /* Meta Info */
-    .meta { 
-      color: var(--muted); 
-      font-size: 0.875rem;
-      margin-top: 0.5rem;
-    }
-    
-    /* Pills/Tags */
-    .pill { 
-      display: inline-flex;
-      align-items: center;
-      padding: 0.375rem 0.875rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      margin: 0.25rem 0.25rem 0.25rem 0;
-      font-size: 0.875rem;
-      background: var(--bg);
-      color: var(--muted);
-      transition: all 0.2s ease;
-    }
-    
-    .pill:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    /* Lists */
-    ul {
-      margin: 0.75rem 0;
-      padding-left: 1.5rem;
-    }
-    
-    ul.inline { 
-      padding: 0; 
-      margin: 1rem 0 0; 
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    
-    ul.inline li { 
-      display: flex;
-      align-items: center;
-    }
-    
-    ul.inline li::before {
-      content: "→";
-      margin-right: 0.5rem;
-      color: var(--accent);
-    }
-
-    /* Project Cards */
-    .project-tech {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
-    /* Certifications Grid */
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-    }
-    
-    .cert-card {
-            background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
-      transition: all 0.3s ease;
-    }
-    
-    .cert-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-      border-color: var(--accent);
-    }
-    
-    .cert-card strong {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: var(--fg);
-    }
-    
-    .cert-card a {
-      font-weight: 500;
-      font-size: 0.875rem;
-    }
-
-    /* Contact Section */
-    #contact {
-      text-align: center;
-      padding: 4rem 0;
-    }
-    
-    #contact p {
-      font-size: 1.125rem;
-      margin: 1rem 0;
-    }
-    
-    #contact a {
-      font-weight: 600;
-      margin: 0 0.5rem;
-    }
-
-    /* Footer */
-    footer { 
-      border-top: 1px solid var(--border); 
-      padding: 2rem 1rem; 
-      text-align: center;
-      color: var(--muted); 
-      font-size: 0.875rem;
-      background: var(--bg-secondary);
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    section {
-      animation: fadeIn 0.6s ease-out;
-    }
-
-    /* Utility Classes */
-    .subtle { 
-      color: var(--muted); 
-      font-size: 0.875rem;
-    }
-    
-    .mb-0 { margin-bottom: 0; }
-    .mt-1 { margin-top: 1rem; }
-    .mt-2 { margin-top: 2rem; }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <div class="hero">
-        <div class="avatar">
-          <img src="assets/images/profile.jpg" alt="Profile photo of Swagotam Malakar" />
+      <div class="container hero__content">
+        <div class="hero__left" data-reveal>
+          <h1 class="hero__title">
+            <span class="overline">NLP researcher</span>
+            Swagotam Malakar
+          </h1>
+          <p class="hero__subtitle">
+            I build bias-aware NLP systems for Bengali news — detecting and correcting framing, word-choice, and omission bias with transparent, reproducible pipelines.
+          </p>
+          <div class="hero__meta">
+            <span class="meta__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 2 4 5 4 9c0 6 8 13 8 13s8-7 8-13c0-4-4-7-8-7zM12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="currentColor"/></svg>
+              Dhaka, Bangladesh
+            </span>
+            <span class="meta__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+              United International University
+            </span>
+          </div>
+          <div class="hero__ctas">
+            <a href="#work" class="btn btn--primary">View work</a>
+            <a href="#contact" class="btn btn--ghost">Contact</a>
+          </div>
+          <div class="hero__stats">
+            <div class="stat">
+              <span class="stat__num">6+</span>
+              <span class="stat__label">Datasets</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">3</span>
+              <span class="stat__label">Preprints</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">12k</span>
+              <span class="stat__label">Lines of code</span>
+            </div>
+          </div>
         </div>
-        <div>
-          <h1>Swagotam Malakar</h1>
-          <div class="tagline">Author • Tech Enthusiast • CS Graduate</div>
-          <div class="location">Dhaka, Bangladesh</div>
-          <nav>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-          </nav>
+
+        <div class="hero__right" data-reveal>
+          <div class="avatar-wrap">
+            <img src="assets/img/avatar.jpg" alt="Portrait of Swagotam Malakar" class="avatar" loading="lazy" />
+            <div class="avatar__ring"></div>
+          </div>
+          <ul class="social">
+            <li><a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.7 2 12.38c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.23.68-.5v-1.75c-2.78.63-3.37-1.2-3.37-1.2-.46-1.2-1.12-1.52-1.12-1.52-.91-.65.07-.64.07-.64 1 .07 1.52 1.08 1.52 1.08.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.16-4.56-5.19 0-1.15.39-2.08 1.03-2.82-.1-.26-.45-1.3.1-2.71 0 0 .85-.28 2.8 1.08a9.3 9.3 0 0 1 5.1 0c1.95-1.36 2.8-1.08 2.8-1.08.55 1.41.2 2.45.1 2.71.64.74 1.03 1.67 1.03 2.82 0 4.04-2.34 4.92-4.57 5.18.36.31.68.92.68 1.86V21.6c0 .27.17.61.69.5A10.16 10.16 0 0 0 22 12.38C22 6.7 17.52 2 12 2Z"/></svg>
+            </a></li>
+            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener" aria-label="Google Scholar">
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3L2 12l4 0 0 7 6 2 6-2 0-7 4 0zM12 5.7l5.2 4.8H6.8zM12 20l-4-1.3v-5.9h8V18.7z"/></svg>
+            </a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zm7.5 0h4.8v2.2h.1c.7-1.3 2.5-2.7 5.1-2.7 5.5 0 6.5 3.6 6.5 8.4V24h-5v-7.2c0-1.7 0-3.8-2.3-3.8-2.3 0-2.6 1.8-2.6 3.7V24h-5z"/></svg>
+            </a></li>
+            <li><a href="mailto:hello@example.com" aria-label="Email">
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work" aria-label="Selected work">
+      <div class="container">
+        <div class="section__head">
+          <h2>Selected work</h2>
+          <p class="section__lede">Bias detection and correction for Bengali news — datasets, models, and tools.</p>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="nlp">NLP</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="dataset">Dataset</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="xai">XAI</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="tool">Tool</button>
+        </div>
+
+        <div class="grid projects" id="projects">
+          <!-- Project Card -->
+          <article class="card project" data-tags="nlp xai" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/project-1.jpg" alt="BiasCue: Explainable bias detection in Bengali headlines" loading="lazy" />
+              <button class="card__action" aria-label="Open project" data-open-project>
+                <span>View</span>
+              </button>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">BiasCue</h3>
+              <p class="card__desc">Explainable bias detection in Bengali headlines with rationale highlighting and counterfactual rewriting.</p>
+              <ul class="tags">
+                <li>NLP</li><li>XAI</li><li>Bengali</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card project" data-tags="dataset nlp" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/project-2.jpg" alt="Swarabyanjan dataset curation UI" loading="lazy" />
+              <button class="card__action" aria-label="Open project" data-open-project>
+                <span>View</span>
+              </button>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Swarabyanjan</h3>
+              <p class="card__desc">A curated Bengali news dataset with headline–body bias labels, annotator agreement, and metadata.</p>
+              <ul class="tags">
+                <li>Dataset</li><li>NLP</li><li>Annotation</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card project" data-tags="tool nlp" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/project-3.jpg" alt="BiasFix: Interactive headline rewriting tool" loading="lazy" />
+              <button class="card__action" aria-label="Open project" data-open-project>
+                <span>View</span>
+              </button>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">BiasFix</h3>
+              <p class="card__desc">Interactive tool to rewrite biased headlines, with severity scoring and style-preserving constraints.</p>
+              <ul class="tags">
+                <li>Tool</li><li>NLP</li><li>UX</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card project" data-tags="xai tool" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/project-4.jpg" alt="BiasLens visualization dashboard" loading="lazy" />
+              <button class="card__action" aria-label="Open project" data-open-project>
+                <span>View</span>
+              </button>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">BiasLens</h3>
+              <p class="card__desc">Visual analytics for framing bias across outlets, with saliency maps and outlet comparisons.</p>
+              <ul class="tags">
+                <li>XAI</li><li>Tool</li><li>Viz</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Curved divider -->
+      <svg class="section-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 C300,120 1140,-120 1440,0 L1440,120 L0,120 Z" fill="currentColor"></path>
+      </svg>
+    </section>
+
+    <!-- Research -->
+    <section class="section alt" id="research" aria-label="Research">
+      <div class="container">
+        <div class="section__head">
+          <h2>Research</h2>
+          <p class="section__lede">From bias detection to corrective generation and evaluation in low-resource contexts.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__item" data-reveal>
+            <div class="tl__dot"></div>
+            <div class="tl__content">
+              <h3 class="tl__title">Headline–Body Bias Detection</h3>
+              <p class="tl__desc">Contrastive fine-tuning of BanglaBERT with multi-view rationales to catch framing and omission bias.</p>
+              <div class="tl__meta">2025 · Preprint</div>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <div class="tl__dot"></div>
+            <div class="tl__content">
+              <h3 class="tl__title">Bias-Aware Rewriting</h3>
+              <p class="tl__desc">Constrained decoding to preserve facts and sentiment polarity while neutralizing biased cues.</p>
+              <div class="tl__meta">2024 · Study</div>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <div class="tl__dot"></div>
+            <div class="tl__content">
+              <h3 class="tl__title">Evaluation Beyond Accuracy</h3>
+              <p class="tl__desc">Human-in-the-loop evaluation with calibration, fairness, and explanation quality metrics.</p>
+              <div class="tl__meta">2023 · Workshop</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="section" id="writing" aria-label="Writing">
+      <div class="container">
+        <div class="section__head">
+          <h2>Writing</h2>
+          <p class="section__lede">Notes on media forensics, explainability, and transparency in news reporting.</p>
+        </div>
+
+        <div class="grid posts">
+          <article class="post card" data-reveal>
+            <div class="card__body">
+              <h3 class="card__title">Measuring Framing Bias Beyond Labels</h3>
+              <p class="card__desc">Why rationale-level supervision beats headline-only labels for robust bias detection.</p>
+              <a href="#" class="link">Read post →</a>
+            </div>
+          </article>
+
+          <article class="post card" data-reveal>
+            <div class="card__body">
+              <h3 class="card__title">Building Datasets for Low-Resource Media</h3>
+              <p class="card__desc">Annotation design, guidelines, and quality control when “ground truth” is contested.</p>
+              <a href="#" class="link">Read post →</a>
+            </div>
+          </article>
+
+          <article class="post card" data-reveal>
+            <div class="card__body">
+              <h3 class="card__title">Counterfactuals for Bias Correction</h3>
+              <p class="card__desc">Using controlled edits and constraints to neutralize bias without losing meaning.</p>
+              <a href="#" class="link">Read post →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <svg class="section-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 C300,120 1140,-120 1440,0 L1440,120 L0,120 Z" fill="currentColor"></path>
+      </svg>
+    </section>
+
+    <!-- About -->
+    <section class="section alt" id="about" aria-label="About">
+      <div class="container about">
+        <div class="about__text" data-reveal>
+          <h2>About</h2>
+          <p>I’m a researcher at United International University focusing on bias detection and correction in Bengali news. I care about transparent, reproducible pipelines, and building tools that help journalists and readers see how language shapes perception.</p>
+          <ul class="bullets">
+            <li><strong>Focus:</strong> Bias detection, counterfactual rewriting, explainability</li>
+            <li><strong>Models:</strong> BanglaBERT, mBERT, instruction-tuned LMs</li>
+            <li><strong>Values:</strong> Reproducibility, clarity, human-centered evaluation</li>
+          </ul>
+          <div class="skills">
+            <span class="chip">Python</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">Hugging Face</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">D3.js</span>
+            <span class="chip">Weights & Biases</span>
+          </div>
+        </div>
+        <div class="about__media" data-reveal>
+          <div class="glass panel">
+            <h3 class="panel__title">What I’m exploring</h3>
+            <ul class="todo">
+              <li><strong>Benchmark:</strong> Cross-outlet bias contrast sets for Bengali</li>
+              <li><strong>Correction:</strong> Style-preserving edits with factual constraints</li>
+              <li><strong>UI:</strong> Rationales-as-highlights for journalist workflows</li>
+            </ul>
+          </div>
+          <div class="glass panel">
+            <h3 class="panel__title">Availability</h3>
+            <p>Open to collaborations on bias-aware NLP, dataset design, and explainable tools.</p>
+            <a class="btn btn--primary w-100" href="#contact">Start a conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-label="Contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contact</h2>
+          <p class="section__lede">Have a project or research idea? I’d love to hear from you.</p>
+        </div>
+
+        <form class="form" id="contact-form" action="https://formspree.io/f/your-id" method="POST" novalidate>
+          <div class="form__row">
+            <div class="input">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+              <span class="input__msg"></span>
+            </div>
+            <div class="input">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="name@example.com" required />
+              <span class="input__msg"></span>
+            </div>
+          </div>
+          <div class="input">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell me a bit about what you’re building…" required></textarea>
+            <span class="input__msg"></span>
+          </div>
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary">Send message</button>
+            <a class="btn btn--ghost" href="mailto:hello@example.com">Or email directly</a>
+          </div>
+          <p class="form__note">By contacting me, you agree to be reached back regarding your inquiry.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer__brand">
+          <div class="brand brand--muted">
+            <span class="brand__mark">SM</span>
+            <span class="brand__name">Swagotam Malakar</span>
+          </div>
+          <p class="muted">Bias-aware NLP for Bengali news. Built with care, accessible by design.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#work">Work</a>
+          <a href="#research">Research</a>
+          <a href="#writing">Writing</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer__social">
+          <a href="https://github.com/" aria-label="GitHub">GitHub</a>
+          <a href="https://scholar.google.com/" aria-label="Google Scholar">Scholar</a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
+          <a href="mailto:hello@example.com" aria-label="Email">Email</a>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <div class="container small muted">© <span id="year"></span> Swagotam Malakar. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <!-- Project modal -->
+    <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-modal="false">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close" data-close-modal>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="modal__content">
+          <h3 id="modal-title">Project</h3>
+          <p class="modal__desc">Details will appear here.</p>
+          <div class="modal__gallery" aria-label="Project images">
+            <img src="assets/img/project-1.jpg" alt="" />
+          </div>
+          <div class="modal__links">
+            <a href="#" class="btn btn--primary" target="_blank" rel="noopener">Live demo</a>
+            <a href="#" class="btn btn--ghost" target="_blank" rel="noopener">Source</a>
+          </div>
         </div>
       </div>
     </div>
-  </header>
 
-  <main>
-    <section id="about">
-      <div class="container">
-        <h2>About</h2>
-        <p>
-          An author in the living world and a lifelong learner with deep academic curiosity across computer science, science & technology, astrophysics, theoretical physics, and applied mathematics.
-          I'm currently a researcher at the Center for Emerging Networks and Technologies Research (CENTeR) at United International University, focusing on practical, impactful technology.
-          I enjoy building full‑stack systems and exploring networks, cybersecurity, AI, and systems research that helps people at scale.
-        </p>
-      </div>
-    </section>
+    <!-- Back to top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0l-7 7m7-7l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
 
-    <section id="experience">
-      <div class="container">
-        <h2>Experience</h2>
-        <div class="card">
-          <strong>Researcher</strong>
-                    <div class="meta">Center for Emerging Networks and Technologies Research (CENTeR), UIU • Nov 2024 – Present</div>
-          <p>Academic and applied research in emerging networks, cybersecurity, and systems; contributing to prototypes, literature reviews, and collaborative projects.</p>
-        </div>
-        <div class="card">
-          <strong>Quizzer</strong>
-          <div class="meta">GOVT. Science College Science Club • 2018 – 2020</div>
-          <p>Active participant in academic quiz competitions and knowledge‑sharing activities.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <h2>Education</h2>
-        <div class="card">
-          <strong>BSc (Engineering), Computer Science & Engineering</strong>
-          <div class="meta">United International University • 2022 – 2026</div>
-        </div>
-        <div class="card">
-          <strong>HSC, Science</strong>
-          <div class="meta">Government Science College • 2018 – 2020 • GPA 5.00</div>
-        </div>
-        <div class="card">
-          <strong>SSC, Science</strong>
-          <div class="meta">Jury Govt. Model High School • 2013 – 2018 • GPA 5.00</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        
-        <div class="card">
-          <strong>LifeLink: A Comprehensive All‑in‑One Service Platform for Bangladesh</strong>
-          <div class="meta">Feb 2025 – Jun 2025</div>
-          <p>
-            A full‑stack digital platform unifying essential services (healthcare, shopping, education, employment, housing, vehicle services) into one responsive system.
-            Custom MVC‑like architecture, robust auth, unified cart/payment, chatbot assistant, role‑based access.
-          </p>
-          <ul>
-            <li>8 service modules • 39 DB tables • 156 API endpoints • 45K+ LOC</li>
-            <li>Avg load time: 2.3s; concurrent users: 10,000+</li>
-            <li>Responsive UI, multilingual‑ready, positive stakeholder feedback</li>
-          </ul>
-          <div class="project-tech">
-            <strong>Technologies:</strong> HTML5, CSS3, JavaScript (ES6+), Tailwind CSS, PHP 7.4+, MySQL 5.7+, Apache/Nginx, PDO, MVC, JIRA, Git, CSRF protection, bKash/Nagad/Rocket integration
-          </div>
-          <ul class="inline">
-            <li><a href="https://github.com/smalakar-is-here/lifelink">View Code</a></li>
-            <li><a href="assets/projects/lifelink/LifeLink-Overview.pdf">Project PDF</a></li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <strong>Blockchain for Pharmaceutical Supply Chain Integrity</strong>
-          <div class="meta">Counterfeit Drug Prevention in Bangladesh</div>
-          <p>
-                        Research and strategy on applying blockchain to enhance end‑to‑end traceability and compliance in pharma supply chains, with emphasis on Bangladesh's context.
-          </p>
-          <ul>
-            <li>Analyzed vulnerabilities across manufacturing, distribution, and retail</li>
-            <li>Designed blockchain‑based traceability for product authenticity</li>
-            <li>Assessed costs, regulatory alignment, and stakeholder collaboration</li>
-            <li>Proposed phased rollout and governance framework</li>
-          </ul>
-          <ul class="inline">
-            <li><a href="assets/projects/blockchain/Pharma-Blockchain-Whitepaper.pdf">View Whitepaper</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="certifications">
-      <div class="container">
-        <h2>Certifications</h2>
-        <div class="cert-grid">
-          <div class="cert-card">
-            <strong>CCNA: Introduction to Networks</strong>
-            <div class="meta">Cisco Networking Academy</div>
-            <a href="assets/certificates/ccna-itn-swagotam-malakar.pdf">View certificate</a>
-          </div>
-          
-          <div class="cert-card">
-            <strong>Cybersecurity Essentials</strong>
-            <div class="meta">Cisco Networking Academy</div>
-            <a href="assets/certificates/cybersecurity-essentials.pdf">View certificate</a>
-          </div>
-          
-          <div class="cert-card">
-            <strong>DevOps for Engineers</strong>
-            <div class="meta">CENTeR</div>
-            <a href="assets/certificates/devops-for-engineers.pdf">View certificate</a>
-          </div>
-          
-          <div class="cert-card">
-            <strong>Python Programming</strong>
-            <div class="meta">Multiple Certifications</div>
-            <a href="assets/certificates/hackerrank-python-basic.pdf">HackerRank</a> • 
-            <a href="assets/certificates/pcap-python.pdf">PCAP</a>
-          </div>
-          
-          <div class="cert-card">
-            <strong>Red Hat System Administration</strong>
-            <div class="meta">RH124 & RH134 • Ver. 9.3</div>
-            <a href="assets/certificates/red-hat-rh124.pdf">RH124</a> • 
-            <a href="assets/certificates/red-hat-rh134.pdf">RH134</a>
-          </div>
-          
-          <div class="cert-card">
-            <strong>C/C++ Programming</strong>
-            <div class="meta">C++ Institute</div>
-            <a href="assets/certificates/cla-programming-essentials-in-c.pdf">CLA</a> • 
-            <a href="assets/certificates/cle-entry-level-c.pdf">CLE</a>
-          </div>
-          
-          <div class="cert-card">
-            <strong>JavaScript Essentials</strong>
-            <div class="meta">JavaScript Institute</div>
-            <a href="assets/certificates/jse-javascript.pdf">View certificate</a>
-          </div>
-          
-          <div class="cert-card">
-            <strong>CS106A: Python Programming</strong>
-            <div class="meta">Stanford University (Code in Place)</div>
-            <a href="assets/certificates/stanford-cs106a.pdf">View certificate</a>
-          </div>
-        </div>
-        <p class="subtle mt-2">+ 15 more certifications including NDG Linux, Digital Marketing, and specialized courses</p>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <span class="pill">HTML5</span>
-          <span class="pill">CSS3</span>
-                    <span class="pill">Tailwind CSS</span>
-          <span class="pill">JavaScript (ES6+)</span>
-          <span class="pill">PHP</span>
-          <span class="pill">MySQL</span>
-          <span class="pill">Python</span>
-          <span class="pill">TensorFlow</span>
-          <span class="pill">PyTorch</span>
-          <span class="pill">Machine Learning</span>
-          <span class="pill">Computer Vision</span>
-          <span class="pill">Data Analysis</span>
-          <span class="pill">C/C++</span>
-          <span class="pill">Java</span>
-          <span class="pill">Git</span>
-          <span class="pill">Linux</span>
-          <span class="pill">CCNA Networking</span>
-          <span class="pill">Blockchain</span>
-          <span class="pill">Quantum Computing</span>
-          <span class="pill">LaTeX</span>
-          <span class="pill">Apache/Nginx</span>
-          <span class="pill">MVC Architecture</span>
-          <span class="pill">JIRA</span>
-          <span class="pill">Leadership</span>
-          <span class="pill">Public Speaking</span>
-          <span class="pill">Team Coordination</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="volunteering">
-      <div class="container">
-        <h2>Volunteering & Activities</h2>
-        <div class="grid-2">
-          <div class="card">
-            <strong>Scout</strong>
-            <div class="meta">Bangladesh Scouts • Jan 2010 – May 2018</div>
-            <p>8 years of service in scouting, developing leadership and community service skills.</p>
-          </div>
-          <div class="card">
-            <strong>Science Club Quizzer</strong>
-            <div class="meta">Government Science College • Jul 2018 – Mar 2020</div>
-            <p>Active participant in academic quiz competitions and knowledge-sharing activities.</p>
-          </div>
-        </div>
-        
-        <div class="card mt-1">
-          <strong>🏆 Honors & Awards</strong>
-          <p class="mb-0"><strong>Board Scholarships</strong> – Board of Intermediate and Secondary Education, Sylhet</p>
-          <p class="meta">Awarded in 2012 (PSC), 2015 (JSC), and 2018 (SSC) for academic excellence</p>
-        </div>
-        
-        <div class="card mt-1">
-          <strong>🌐 Languages</strong>
-          <div class="skills-grid mt-1">
-            <span class="pill">Bengali – Native</span>
-            <span class="pill">English – Professional</span>
-            <span class="pill">Hindi – Working Proficiency</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2>Get In Touch</h2>
-        <p>Feel free to reach out for collaborations, research opportunities, or just a friendly chat!</p>
-        <p>
-          <a href="mailto:smalakar2231068@bscse.uiu.ac.bd">✉️ Email</a>
-          <a href="https://github.com/smalakar-is-here">💻 GitHub</a>
-          <a href="https://www.linkedin.com/in/swagotam-malakar/">💼 LinkedIn</a>
-        </p>
-        <p class="mt-2">
-          <a href="assets/resume/Swagotam-Malakar-Resume.pdf" style="font-weight: 600; padding: 0.75rem 1.5rem; background: var(--accent); color: white; border-radius: 8px; display: inline-block; transition: all 0.3s ease;">
-            📄 Download Resume
-          </a>
-        </p>
-      </div>
-    </section>
-  </main>
-
-   <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Swagotam Malakar • Built with ❤️ and GitHub Pages</p>
-    </div>
-  </footer>
-  
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Smooth scroll for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-    
-    // Add active state to navigation based on scroll position
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('nav a');
-      
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.style.background = '';
-        link.style.color = '';
-        if (link.getAttribute('href').slice(1) === current) {
-          link.style.background = 'var(--accent)';
-          link.style.color = 'white';
-        }
-      });
-    });
-  </script>
-</body>
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+  </body>
 </html>
