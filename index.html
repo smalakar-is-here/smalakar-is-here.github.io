@@ -1,364 +1,321 @@
-<!doctype html>
-<html lang="en" data-theme="auto">
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Swagotam Malakar — Bias‑Aware Bengali NLP</title>
-  <meta name="description" content="Swagotam Malakar — Researcher at United International University. Bias-aware NLP for Bengali news: detection, correction, explainability, transparency." />
-  <meta name="theme-color" content="#3b82f6" />
-  <meta property="og:title" content="Swagotam Malakar — Bias‑Aware Bengali NLP" />
-  <meta property="og:description" content="Research, projects, publications, and tools in bias-aware NLP for Bengali news." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SM Swagotam Malakar — Bias‑Aware Bengali NLP</title>
+  <meta name="description" content="Swagotam Malakar — Researcher at United International University (UIU), Dhaka. Focused on bias detection and correction in Bengali news: detection, correction, explainability, transparency." />
+  <meta name="author" content="SM Swagotam Malakar" />
+
+  <link rel="canonical" href="https://your-username.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SM Swagotam Malakar — Bias‑Aware Bengali NLP" />
+  <meta property="og:description" content="Bias-aware Bengali NLP for news: detection, correction, explainability, transparency. Researcher at UIU, Dhaka." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.example" />
-  <meta property="og:image" content="https://your-domain.example/assets/og-image.png" />
-  <link rel="canonical" href="https://your-domain.example" />
+  <meta property="og:url" content="https://your-username.github.io/" />
+  <meta property="og:image" content="assets/images/profile.jpg" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SM Swagotam Malakar — Bias‑Aware Bengali NLP" />
+  <meta name="twitter:description" content="Bias-aware Bengali NLP for news: detection, correction, explainability, transparency." />
+  <meta name="twitter:image" content="assets/images/profile.jpg" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f5f9" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220" />
+
+  <link rel="preload" href="assets/images/profile.jpg" as="image" imagesrcset="assets/images/profile.jpg 1x" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="app/app.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Scroll progress -->
-  <div class="scroll-progress" aria-hidden="true">
-    <div class="scroll-progress__bar" id="scrollBar"></div>
-  </div>
-
-  <!-- Header / Nav -->
-  <header class="site-header" role="banner">
-    <nav class="nav container" aria-label="Primary">
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="Home">
-        <span class="brand__mark">SM</span>
-        <span class="brand__text">Swagotam Malakar</span>
+        <span class="brand-mark" aria-hidden="true">SM</span>
+        <span class="brand-text">Swagotam&nbsp;Malakar</span>
       </a>
 
-      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
-
-      <div class="nav__links" id="navMenu">
-        <ul class="nav__list">
-          <li><a href="#about" class="nav__link">About</a></li>
-          <li><a href="#research" class="nav__link">Research</a></li>
-          <li><a href="#projects" class="nav__link">Projects</a></li>
-          <li><a href="#publications" class="nav__link">Publications</a></li>
-          <li><a href="#experience" class="nav__link">Experience</a></li>
-          <li><a href="#skills" class="nav__link">Skills</a></li>
-          <li><a href="#contact" class="nav__link">Contact</a></li>
+      <nav class="site-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-label">Menu</span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="button button--ghost" href="assets/resume/Swagotam-Malakar-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <li>
+            <button id="theme-toggle" class="button button--ghost" type="button" aria-label="Toggle color theme">Theme</button>
+          </li>
         </ul>
-      </div>
-
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌗</button>
-    </nav>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="top" aria-label="Intro">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="container">
-      <div class="hero-grid">
-        <div class="avatar" aria-hidden="true">
-          <div class="avatar__ring"></div>
-          <img src="assets/avatar.jpg" alt="Portrait of Swagotam Malakar" />
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-media">
+          <img
+            src="assets/images/profile.jpg"
+            alt="Portrait of SM Swagotam Malakar"
+            loading="eager"
+            decoding="async"
+            class="avatar"
+          />
         </div>
-        <div>
+        <div class="hero-copy">
           <h1>Bias‑Aware Bengali NLP</h1>
-          <p class="tagline">Detection • Correction • Explainability • Transparency</p>
-          <p class="location">Dhaka, Bangladesh — Researcher, United International University</p>
-          <div class="nav-pills">
-            <a href="#research">Research</a>
-            <a href="#projects">Projects</a>
-            <a href="#publications">Publications</a>
-            <a href="#contact" class="is-primary">Contact</a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <p class="kicker">Detection • Correction • Explainability • Transparency</p>
+          <p class="meta">Dhaka, Bangladesh — Researcher, United International University</p>
+          <div class="hero-actions">
+            <a class="button" href="#research">Research</a>
+            <a class="button" href="#projects">Projects</a>
+            <a class="button" href="#publications">Publications</a>
+            <a class="button button--outline" href="#contact">Contact</a>
+            <a class="button button--ghost" href="assets/resume/Swagotam-Malakar-Resume.pdf" target="_blank" rel="noopener">Resume</a>
           </div>
+          <ul class="social-links" aria-label="Profiles">
+            <li><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noopener">Google Scholar</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <main id="main">
-    <!-- About -->
-    <section id="about" class="section section-alt reveal">
+    <section id="about" class="section">
       <div class="container">
         <h2>About</h2>
-        <div class="card">
-          <p>
-            I’m a researcher at UIU specializing in bias detection and correction for Bengali news headlines and articles.
-            My work focuses on factual consistency, explainable decisions, and reproducible pipelines tailored for low‑resource settings.
-          </p>
-          <ul class="inline">
-            <li><strong>Focus:</strong> Media forensics, transparency in journalism, bias‑aware NLP</li>
-            <li><strong>Models:</strong> BanglaBERT, mBERT, XLM‑R, lightweight transformers</li>
-            <li><strong>Methods:</strong> Counterfactual data augmentation, calibration, fairness audits</li>
-            <li><strong>Values:</strong> Reproducibility, rigorous evaluation, open artifacts</li>
-          </ul>
+        <p>I’m a researcher at UIU specializing in bias detection and correction for Bengali news headlines and articles. My work focuses on factual consistency, explainable decisions, and reproducible pipelines tailored for low-resource settings.</p>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Focus</h3>
+            <ul>
+              <li>Media forensics</li>
+              <li>Transparency in journalism</li>
+              <li>Bias‑aware NLP</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>Models</h3>
+            <ul>
+              <li>BanglaBERT, mBERT, XLM‑R</li>
+              <li>Lightweight transformers</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>Methods</h3>
+            <ul>
+              <li>Counterfactual data augmentation</li>
+              <li>Calibration</li>
+              <li>Fairness audits</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>Values</h3>
+            <ul>
+              <li>Reproducibility</li>
+              <li>Rigorous evaluation</li>
+              <li>Open artifacts</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Research -->
-    <section id="research" class="section reveal">
+    <section id="research" class="section section-alt">
       <div class="container">
         <h2>Research</h2>
-
-        <div class="grid-2">
+        <div class="cards">
           <article class="card">
-            <h3>Bias detection in Bengali news</h3>
-            <p class="meta">Headline and article‑level stance, framing, and loaded‑language cues</p>
-            <p>
-              I build supervised and semi‑supervised detectors for ideological and sensational bias in Bengali news,
-              with careful attention to annotation guidelines, inter‑annotator agreement, and domain shift across outlets.
-            </p>
-            <div class="project-tech">
-              <strong>Stack:</strong> BanglaBERT, mBERT, XLM‑R; focal loss; layerwise LR; stratified CV
-              <div class="metrics">
-                <span class="metric">Macro‑F1 focus</span>
-                <span class="metric">Calibration (ECE)</span>
-                <span class="metric">Fairness slices</span>
-                <span class="metric">Ablations</span>
-              </div>
-            </div>
-            <details class="snippet">
-              <summary>Reproducible training recipe (concise)</summary>
-              <pre><code># train.sh
-python train.py \
-  --model banglabert \
-  --lr 3e-5 --batch 32 --epochs 8 \
-  --loss focal:gamma=2 \
-  --scheduler cosine --warmup 0.1 \
-  --fp16 --grad-accum 2 \
-  --seed 42 43 44 45 46 \
-  --stratified-k 5 \
-  --eval macro_f1,auc,ece,confusion \
-  --save runs/banglabert_biasdet</code></pre>
-            </details>
+            <h3>Bias detection and correction in Bengali news</h3>
+            <p>Designing bias‑aware training and inference for headlines and articles, balancing detection with minimally invasive correction and human‑centered explanations.</p>
+            <ul class="tag-list">
+              <li>Bias detection</li>
+              <li>Counterfactuals</li>
+              <li>Explainability</li>
+              <li>Calibration</li>
+              <li>Reproducibility</li>
+            </ul>
           </article>
-
           <article class="card">
-            <h3>Bias correction with explainability</h3>
-            <p class="meta">Counterfactual rewriting with guardrails for factuality and tone</p>
-            <p>
-              I prototype correction models that rewrite biased spans while preserving facts, guided by saliency maps and
-              counterfactual prompts. Outputs are accompanied by rationales to support editorial review.
-            </p>
-            <div class="project-tech">
-              <strong>Stack:</strong> Seq2seq (mT5), constrained decoding, saliency‑guided span masking, QE filters
-              <div class="metrics">
-                <span class="metric">Human eval</span>
-                <span class="metric">Factual QA checks</span>
-                <span class="metric">Toxicity sanity tests</span>
-              </div>
-            </div>
-            <details class="snippet">
-              <summary>Saliency‑guided masking pipeline</summary>
-              <pre><code># pipeline.yaml (excerpt)
-steps:
-  - saliency: grad_x_input, topk: 0.2
-  - mask_spans: strategy: contiguous, max_len: 12
-  - generate: model: mt5-small-bn, decode: constrained, max_new_tokens: 80
-  - verify: factual_qa + lexical_consistency + toxicity
-  - log: rationale_spans, diffs, pass/fail</code></pre>
-            </details>
+            <h3>Factual consistency and assurance</h3>
+            <p>Evaluating and improving factuality in model outputs with reference checking, uncertainty‑aware scoring, and transparent reporting suitable for low‑resource settings.</p>
+            <ul class="tag-list">
+              <li>Factuality</li>
+              <li>Uncertainty</li>
+              <li>Low‑resource</li>
+              <li>Auditability</li>
+            </ul>
           </article>
-        </div>
-
-        <div class="card">
-          <h3>Reproducibility checklist</h3>
-          <ul class="inline">
-            <li><strong>Seeds:</strong> Multiple seeds with mean/std reporting</li>
-            <li><strong>Data:</strong> Versioned splits, leakage checks, labeling schema</li>
-            <li><strong>Code:</strong> Config‑driven runs, hash‑named artifacts</li>
-            <li><strong>Docs:</strong> Model cards and dataset statements</li>
-          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section section-alt reveal">
+    <section id="projects" class="section">
       <div class="container">
         <h2>Projects</h2>
-
-        <article class="card">
-          <h3>BiasAware BN‑News</h3>
-          <p class="meta">End‑to‑end pipeline for bias detection and correction in Bengali</p>
-          <p>
-            Modular components for data collection, annotation aid, detectors, counterfactual rewriting,
-            and a lightweight reviewer UI. Emphasis on transparency and editorial utility.
-          </p>
-          <div class="project-tech">
-            <strong>Tech:</strong> PyTorch, Transformers, FastAPI, Docker, ONNX, Streamlit
-            <div class="metrics">
-              <span class="metric">Macro‑F1 ↑</span>
-              <span class="metric">ECE ↓</span>
-              <span class="metric">Human accept rate ↑</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>LifeLink</h3>
-          <p class="meta">Full‑stack app (social impact)</p>
-          <p>A clean, responsive build with attention to reliability and accessibility.</p>
-          <div class="project-tech">
-            <strong>Tech:</strong> React, Node, Postgres, Auth, CI/CD
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Pharma Blockchain</h3>
-          <p class="meta">Traceability and integrity</p>
-          <p>Practical ledger design with measured trade‑offs between throughput and auditability.</p>
-          <div class="project-tech">
-            <strong>Tech:</strong> Solidity, Hardhat, IPFS, Next.js
-          </div>
-        </article>
+        <div id="projects-grid" class="cards">
+          <article class="card">
+            <h3>LifeLink — Community health triage</h3>
+            <p>Lightweight, privacy‑aware triage and referral flow for community health workers.</p>
+            <p><a class="button button--sm" href="assets/projects/lifelink/LifeLink-Overview.pdf" target="_blank" rel="noopener">Overview PDF</a></p>
+            <ul class="tag-list">
+              <li>Healthcare</li>
+              <li>Usability</li>
+              <li>Offline‑first</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Pharma Blockchain — Supply chain transparency</h3>
+            <p>Whitepaper exploring tamper‑evident drug provenance and recall workflows.</p>
+            <p><a class="button button--sm" href="assets/projects/blockchain/Pharma-Blockchain-Whitepaper.pdf" target="_blank" rel="noopener">Whitepaper PDF</a></p>
+            <ul class="tag-list">
+              <li>Blockchain</li>
+              <li>Traceability</li>
+              <li>Compliance</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Publications -->
-    <section id="publications" class="section reveal">
+    <section id="publications" class="section section-alt">
       <div class="container">
         <h2>Publications</h2>
-        <div class="card">
-          <p>
-            Preprint under submission: Bias Detection and Correction in Bengali News — Methods, Benchmarks, and Editorial
-            Interpretability. I’ll add DOI and camera‑ready links here upon acceptance.
-          </p>
-          <ul class="pubs">
-            <li>
-              <strong>Malakar, S.</strong> Bias‑Aware Bengali News: Detection, Correction, and Explainability (under review)
-            </li>
-          </ul>
-        </div>
+        <p>Selected work and works‑in‑progress.</p>
+        <ul class="pub-list">
+          <li>
+            <span class="pub-title">Bias‑Aware Bengali News: Detection, Minimal Correction, and Explainable Audits</span>
+            <span class="pub-meta">Working paper — manuscript in preparation</span>
+          </li>
+          <!-- Add more items as they are published -->
+        </ul>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section section-alt reveal">
+    <section id="experience" class="section">
       <div class="container">
         <h2>Experience</h2>
-
-        <div class="card">
-          <h3>Researcher — CENTeR, United International University</h3>
-          <p class="meta">Dhaka, Bangladesh</p>
-          <ul class="bulleted">
-            <li><strong>Lead:</strong> Bias detection/correction for Bengali news with transformers (BanglaBERT, mBERT)</li>
-            <li><strong>Design:</strong> Annotation schema, QA, and inter‑annotator agreement processes</li>
-            <li><strong>Ship:</strong> Reproducible pipelines, model cards, dataset statements, and reviewer tools</li>
+        <article class="xp">
+          <h3>Researcher — United International University (CENTeR), Dhaka</h3>
+          <ul>
+            <li>Bias detection and correction for Bengali news; evaluation frameworks and fairness audits.</li>
+            <li>Reproducible NLP pipelines, dataset curation, and transparent reporting.</li>
+            <li>Collaboration with faculty and peers on applied research and publication prep.</li>
           </ul>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section reveal">
+    <section id="skills" class="section section-alt">
       <div class="container">
         <h2>Skills</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>NLP and ML</h3>
-            <ul class="bulleted">
-              <li><strong>Transformers:</strong> BanglaBERT, mBERT, XLM‑R</li>
-              <li><strong>Bias & Fairness:</strong> Detection, mitigation, audits</li>
-              <li><strong>Explainability:</strong> Saliency, rationales, calibration</li>
-              <li><strong>Eval:</strong> Macro‑F1, ECE, slice analysis, ablations</li>
+        <div class="skills-grid">
+          <div>
+            <h3>NLP</h3>
+            <ul>
+              <li>Bias detection, mitigation, fairness</li>
+              <li>Factual consistency, explainability</li>
+              <li>BanglaBERT, mBERT, XLM‑R</li>
             </ul>
           </div>
-          <div class="card">
+          <div>
             <h3>Engineering</h3>
-            <ul class="bulleted">
-              <li><strong>Pipelines:</strong> Python, PyTorch, FastAPI</li>
-              <li><strong>Ops:</strong> Docker, DVC, GitHub Actions</li>
-              <li><strong>Frontend:</strong> HTML/CSS/JS, accessibility</li>
-              <li><strong>Docs:</strong> IEEE style, model/dataset cards</li>
+            <ul>
+              <li>Reproducible pipelines, data annotation</li>
+              <li>Evaluation, calibration, monitoring</li>
+              <li>Python, PyTorch, Hugging Face</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Web</h3>
+            <ul>
+              <li>HTML, CSS, JavaScript</li>
+              <li>Responsive UI, accessibility</li>
+              <li>Design systems, UX writing</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education / Certifications / More -->
-    <section id="more" class="section section-alt reveal">
+    <section id="certificates" class="section">
       <div class="container">
-        <h2>Education and more</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>Education</h3>
-            <ul class="bulleted">
-              <li><strong>Graduate‑level CS:</strong> NLP, Machine Learning, AI Ethics</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Certifications</h3>
-            <ul class="bulleted">
-              <li><strong>ML/NLP:</strong> Add your verified certifications with links</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Volunteering & honors</h3>
-            <ul class="bulleted">
-              <li><strong>Community:</strong> GOVT. Science College Science Club (Quizzer)</li>
-              <li><strong>Honors:</strong> Add awards, scholarships, and recognitions</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Languages</h3>
-            <ul class="bulleted">
-              <li><strong>Bengali:</strong> Native</li>
-              <li><strong>English:</strong> Professional</li>
-            </ul>
-          </div>
+        <h2>Certificates</h2>
+        <div id="cert-grid" class="cards" data-js="render-certificates">
+          <!-- Rendered by app.js for maintainability -->
         </div>
+        <noscript>
+          <p>JavaScript is disabled. Browse certificates directly in the <a href="assets/certificates/">certificates folder</a>.</p>
+        </noscript>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section reveal">
+    <section id="contact" class="section section-alt">
       <div class="container">
         <h2>Contact</h2>
-        <div class="card contact">
-          <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-          <ul class="social">
-            <li><a href="https://github.com/your-username" aria-label="GitHub">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/your-username" aria-label="LinkedIn">LinkedIn</a></li>
-            <li><a href="https://scholar.google.com/citations?user=your-id" aria-label="Google Scholar">Google Scholar</a></li>
-          </ul>
-          <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-        </div>
+        <p>If you’d like to collaborate or discuss research, feel free to reach out.</p>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:your.email@example.com?subject=Inquiry%20from%20Portfolio">your.email@example.com</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">linkedin.com/in/your-handle</a></li>
+          <li><strong>Resume:</strong> <a href="assets/resume/Swagotam-Malakar-Resume.pdf" target="_blank" rel="noopener">Download PDF</a></li>
+        </ul>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Swagotam Malakar • Built with care for truth in Bengali NLP</p>
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> SM Swagotam Malakar. All rights reserved.</p>
+      <a class="to-top" href="#top">Back to top ↑</a>
     </div>
   </footer>
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Swagotam Malakar",
-    "jobTitle": "NLP Researcher",
-    "affiliation": "United International University",
-    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "Bangladesh" },
-    "url": "https://your-domain.example",
+    "name": "SM Swagotam Malakar",
+    "jobTitle": "Researcher",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "United International University"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "Bangladesh"
+    },
+    "url": "https://your-username.github.io/",
+    "image": "https://your-username.github.io/assets/images/profile.jpg",
     "sameAs": [
       "https://github.com/your-username",
-      "https://www.linkedin.com/in/your-username",
-      "https://scholar.google.com/citations?user=your-id"
-    ]
+      "https://www.linkedin.com/in/your-handle",
+      "https://scholar.google.com/citations?user=YOURID"
+    ],
+    "knowsAbout": [
+      "Bias detection",
+      "NLP",
+      "Bengali language",
+      "Explainable AI",
+      "Factual consistency"
+    ],
+    "headline": "Bias‑Aware Bengali NLP — Detection, Correction, Explainability, Transparency",
+    "description": "Researcher focused on bias‑aware NLP for Bengali news with reproducible pipelines, fairness audits, and explainable decisions."
   }
   </script>
-
-  <!-- App -->
-  <script src="app.js" defer></script>
 </body>
 </html>
