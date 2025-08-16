@@ -1,428 +1,364 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0f14" />
-    <meta name="description" content="Swagotam Malakar — NLP researcher focusing on bias detection and correction in Bengali news." />
-    <title>Swagotam Malakar — NLP Researcher</title>
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Swagotam Malakar — Bias‑Aware Bengali NLP</title>
+  <meta name="description" content="Swagotam Malakar — Researcher at United International University. Bias-aware NLP for Bengali news: detection, correction, explainability, transparency." />
+  <meta name="theme-color" content="#3b82f6" />
+  <meta property="og:title" content="Swagotam Malakar — Bias‑Aware Bengali NLP" />
+  <meta property="og:description" content="Research, projects, publications, and tools in bias-aware NLP for Bengali news." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example" />
+  <meta property="og:image" content="https://your-domain.example/assets/og-image.png" />
+  <link rel="canonical" href="https://your-domain.example" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Favicon (replace) -->
-    <link rel="icon" href="assets/img/avatar.jpg" />
-  </head>
-  <body>
-    <!-- Scroll progress -->
-    <div class="scroll-progress" aria-hidden="true">
-      <div class="scroll-progress__bar"></div>
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollBar"></div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand__mark">SM</span>
+        <span class="brand__text">Swagotam Malakar</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+
+      <div class="nav__links" id="navMenu">
+        <ul class="nav__list">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#research" class="nav__link">Research</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#publications" class="nav__link">Publications</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌗</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top" aria-label="Intro">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="avatar" aria-hidden="true">
+          <div class="avatar__ring"></div>
+          <img src="assets/avatar.jpg" alt="Portrait of Swagotam Malakar" />
+        </div>
+        <div>
+          <h1>Bias‑Aware Bengali NLP</h1>
+          <p class="tagline">Detection • Correction • Explainability • Transparency</p>
+          <p class="location">Dhaka, Bangladesh — Researcher, United International University</p>
+          <div class="nav-pills">
+            <a href="#research">Research</a>
+            <a href="#projects">Projects</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact" class="is-primary">Contact</a>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Header -->
-    <header class="site-header" id="top">
-      <div class="container header-wrap">
-        <a href="#home" class="brand" aria-label="Go to home">
-          <span class="brand__mark">SM</span>
-          <span class="brand__name">Swagotam Malakar</span>
-        </a>
-
-        <nav class="nav" aria-label="Primary">
-          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">
-            <span class="sr-only">Toggle menu</span>
-            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-          <ul class="nav__list" id="nav-menu">
-            <li><a href="#work">Work</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#writing">Writing</a></li>
-            <li><a href="#about">About</a></li>
-            <li class="nav__ctas">
-              <a class="btn btn--ghost" href="assets/Swagotam_Malakar_CV.pdf" target="_blank" rel="noopener">CV</a>
-              <button class="btn btn--icon theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                <span class="sr-only">Toggle theme</span>
-                <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5 5L3.5 3.5M20.5 20.5L19 19M19 5l1.5-1.5M3.5 20.5L5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="4" fill="currentColor" /></svg>
-                <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/></svg>
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero" id="home" aria-label="Intro">
-      <div class="hero__bg">
-        <div class="gradient"></div>
-        <div class="noise"></div>
-        <svg class="divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,32L80,48C160,64,320,96,480,90.7C640,85,800,43,960,37.3C1120,32,1280,64,1360,80L1440,96V0H0Z" fill="currentColor" />
-        </svg>
-      </div>
-
-      <div class="container hero__content">
-        <div class="hero__left" data-reveal>
-          <h1 class="hero__title">
-            <span class="overline">NLP researcher</span>
-            Swagotam Malakar
-          </h1>
-          <p class="hero__subtitle">
-            I build bias-aware NLP systems for Bengali news — detecting and correcting framing, word-choice, and omission bias with transparent, reproducible pipelines.
-          </p>
-          <div class="hero__meta">
-            <span class="meta__item">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 2 4 5 4 9c0 6 8 13 8 13s8-7 8-13c0-4-4-7-8-7zM12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="currentColor"/></svg>
-              Dhaka, Bangladesh
-            </span>
-            <span class="meta__item">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-              United International University
-            </span>
-          </div>
-          <div class="hero__ctas">
-            <a href="#work" class="btn btn--primary">View work</a>
-            <a href="#contact" class="btn btn--ghost">Contact</a>
-          </div>
-          <div class="hero__stats">
-            <div class="stat">
-              <span class="stat__num">6+</span>
-              <span class="stat__label">Datasets</span>
-            </div>
-            <div class="stat">
-              <span class="stat__num">3</span>
-              <span class="stat__label">Preprints</span>
-            </div>
-            <div class="stat">
-              <span class="stat__num">12k</span>
-              <span class="stat__label">Lines of code</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero__right" data-reveal>
-          <div class="avatar-wrap">
-            <img src="assets/img/avatar.jpg" alt="Portrait of Swagotam Malakar" class="avatar" loading="lazy" />
-            <div class="avatar__ring"></div>
-          </div>
-          <ul class="social">
-            <li><a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.7 2 12.38c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.23.68-.5v-1.75c-2.78.63-3.37-1.2-3.37-1.2-.46-1.2-1.12-1.52-1.12-1.52-.91-.65.07-.64.07-.64 1 .07 1.52 1.08 1.52 1.08.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.16-4.56-5.19 0-1.15.39-2.08 1.03-2.82-.1-.26-.45-1.3.1-2.71 0 0 .85-.28 2.8 1.08a9.3 9.3 0 0 1 5.1 0c1.95-1.36 2.8-1.08 2.8-1.08.55 1.41.2 2.45.1 2.71.64.74 1.03 1.67 1.03 2.82 0 4.04-2.34 4.92-4.57 5.18.36.31.68.92.68 1.86V21.6c0 .27.17.61.69.5A10.16 10.16 0 0 0 22 12.38C22 6.7 17.52 2 12 2Z"/></svg>
-            </a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener" aria-label="Google Scholar">
-              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3L2 12l4 0 0 7 6 2 6-2 0-7 4 0zM12 5.7l5.2 4.8H6.8zM12 20l-4-1.3v-5.9h8V18.7z"/></svg>
-            </a></li>
-            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zm7.5 0h4.8v2.2h.1c.7-1.3 2.5-2.7 5.1-2.7 5.5 0 6.5 3.6 6.5 8.4V24h-5v-7.2c0-1.7 0-3.8-2.3-3.8-2.3 0-2.6 1.8-2.6 3.7V24h-5z"/></svg>
-            </a></li>
-            <li><a href="mailto:hello@example.com" aria-label="Email">
-              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
-            </a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work -->
-    <section class="section" id="work" aria-label="Selected work">
+  <main id="main">
+    <!-- About -->
+    <section id="about" class="section section-alt reveal">
       <div class="container">
-        <div class="section__head">
-          <h2>Selected work</h2>
-          <p class="section__lede">Bias detection and correction for Bengali news — datasets, models, and tools.</p>
-        </div>
-
-        <div class="filters" role="tablist" aria-label="Project filters">
-          <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">All</button>
-          <button class="filter" role="tab" aria-selected="false" data-filter="nlp">NLP</button>
-          <button class="filter" role="tab" aria-selected="false" data-filter="dataset">Dataset</button>
-          <button class="filter" role="tab" aria-selected="false" data-filter="xai">XAI</button>
-          <button class="filter" role="tab" aria-selected="false" data-filter="tool">Tool</button>
-        </div>
-
-        <div class="grid projects" id="projects">
-          <!-- Project Card -->
-          <article class="card project" data-tags="nlp xai" data-reveal>
-            <div class="card__media">
-              <img src="assets/img/project-1.jpg" alt="BiasCue: Explainable bias detection in Bengali headlines" loading="lazy" />
-              <button class="card__action" aria-label="Open project" data-open-project>
-                <span>View</span>
-              </button>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">BiasCue</h3>
-              <p class="card__desc">Explainable bias detection in Bengali headlines with rationale highlighting and counterfactual rewriting.</p>
-              <ul class="tags">
-                <li>NLP</li><li>XAI</li><li>Bengali</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card project" data-tags="dataset nlp" data-reveal>
-            <div class="card__media">
-              <img src="assets/img/project-2.jpg" alt="Swarabyanjan dataset curation UI" loading="lazy" />
-              <button class="card__action" aria-label="Open project" data-open-project>
-                <span>View</span>
-              </button>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Swarabyanjan</h3>
-              <p class="card__desc">A curated Bengali news dataset with headline–body bias labels, annotator agreement, and metadata.</p>
-              <ul class="tags">
-                <li>Dataset</li><li>NLP</li><li>Annotation</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card project" data-tags="tool nlp" data-reveal>
-            <div class="card__media">
-              <img src="assets/img/project-3.jpg" alt="BiasFix: Interactive headline rewriting tool" loading="lazy" />
-              <button class="card__action" aria-label="Open project" data-open-project>
-                <span>View</span>
-              </button>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">BiasFix</h3>
-              <p class="card__desc">Interactive tool to rewrite biased headlines, with severity scoring and style-preserving constraints.</p>
-              <ul class="tags">
-                <li>Tool</li><li>NLP</li><li>UX</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card project" data-tags="xai tool" data-reveal>
-            <div class="card__media">
-              <img src="assets/img/project-4.jpg" alt="BiasLens visualization dashboard" loading="lazy" />
-              <button class="card__action" aria-label="Open project" data-open-project>
-                <span>View</span>
-              </button>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">BiasLens</h3>
-              <p class="card__desc">Visual analytics for framing bias across outlets, with saliency maps and outlet comparisons.</p>
-              <ul class="tags">
-                <li>XAI</li><li>Tool</li><li>Viz</li>
-              </ul>
-            </div>
-          </article>
+        <h2>About</h2>
+        <div class="card">
+          <p>
+            I’m a researcher at UIU specializing in bias detection and correction for Bengali news headlines and articles.
+            My work focuses on factual consistency, explainable decisions, and reproducible pipelines tailored for low‑resource settings.
+          </p>
+          <ul class="inline">
+            <li><strong>Focus:</strong> Media forensics, transparency in journalism, bias‑aware NLP</li>
+            <li><strong>Models:</strong> BanglaBERT, mBERT, XLM‑R, lightweight transformers</li>
+            <li><strong>Methods:</strong> Counterfactual data augmentation, calibration, fairness audits</li>
+            <li><strong>Values:</strong> Reproducibility, rigorous evaluation, open artifacts</li>
+          </ul>
         </div>
       </div>
-
-      <!-- Curved divider -->
-      <svg class="section-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,0 C300,120 1140,-120 1440,0 L1440,120 L0,120 Z" fill="currentColor"></path>
-      </svg>
     </section>
 
     <!-- Research -->
-    <section class="section alt" id="research" aria-label="Research">
+    <section id="research" class="section reveal">
       <div class="container">
-        <div class="section__head">
-          <h2>Research</h2>
-          <p class="section__lede">From bias detection to corrective generation and evaluation in low-resource contexts.</p>
-        </div>
+        <h2>Research</h2>
 
-        <ol class="timeline">
-          <li class="timeline__item" data-reveal>
-            <div class="tl__dot"></div>
-            <div class="tl__content">
-              <h3 class="tl__title">Headline–Body Bias Detection</h3>
-              <p class="tl__desc">Contrastive fine-tuning of BanglaBERT with multi-view rationales to catch framing and omission bias.</p>
-              <div class="tl__meta">2025 · Preprint</div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Bias detection in Bengali news</h3>
+            <p class="meta">Headline and article‑level stance, framing, and loaded‑language cues</p>
+            <p>
+              I build supervised and semi‑supervised detectors for ideological and sensational bias in Bengali news,
+              with careful attention to annotation guidelines, inter‑annotator agreement, and domain shift across outlets.
+            </p>
+            <div class="project-tech">
+              <strong>Stack:</strong> BanglaBERT, mBERT, XLM‑R; focal loss; layerwise LR; stratified CV
+              <div class="metrics">
+                <span class="metric">Macro‑F1 focus</span>
+                <span class="metric">Calibration (ECE)</span>
+                <span class="metric">Fairness slices</span>
+                <span class="metric">Ablations</span>
+              </div>
             </div>
-          </li>
-          <li class="timeline__item" data-reveal>
-            <div class="tl__dot"></div>
-            <div class="tl__content">
-              <h3 class="tl__title">Bias-Aware Rewriting</h3>
-              <p class="tl__desc">Constrained decoding to preserve facts and sentiment polarity while neutralizing biased cues.</p>
-              <div class="tl__meta">2024 · Study</div>
-            </div>
-          </li>
-          <li class="timeline__item" data-reveal>
-            <div class="tl__dot"></div>
-            <div class="tl__content">
-              <h3 class="tl__title">Evaluation Beyond Accuracy</h3>
-              <p class="tl__desc">Human-in-the-loop evaluation with calibration, fairness, and explanation quality metrics.</p>
-              <div class="tl__meta">2023 · Workshop</div>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Writing -->
-    <section class="section" id="writing" aria-label="Writing">
-      <div class="container">
-        <div class="section__head">
-          <h2>Writing</h2>
-          <p class="section__lede">Notes on media forensics, explainability, and transparency in news reporting.</p>
-        </div>
-
-        <div class="grid posts">
-          <article class="post card" data-reveal>
-            <div class="card__body">
-              <h3 class="card__title">Measuring Framing Bias Beyond Labels</h3>
-              <p class="card__desc">Why rationale-level supervision beats headline-only labels for robust bias detection.</p>
-              <a href="#" class="link">Read post →</a>
-            </div>
+            <details class="snippet">
+              <summary>Reproducible training recipe (concise)</summary>
+              <pre><code># train.sh
+python train.py \
+  --model banglabert \
+  --lr 3e-5 --batch 32 --epochs 8 \
+  --loss focal:gamma=2 \
+  --scheduler cosine --warmup 0.1 \
+  --fp16 --grad-accum 2 \
+  --seed 42 43 44 45 46 \
+  --stratified-k 5 \
+  --eval macro_f1,auc,ece,confusion \
+  --save runs/banglabert_biasdet</code></pre>
+            </details>
           </article>
 
-          <article class="post card" data-reveal>
-            <div class="card__body">
-              <h3 class="card__title">Building Datasets for Low-Resource Media</h3>
-              <p class="card__desc">Annotation design, guidelines, and quality control when “ground truth” is contested.</p>
-              <a href="#" class="link">Read post →</a>
+          <article class="card">
+            <h3>Bias correction with explainability</h3>
+            <p class="meta">Counterfactual rewriting with guardrails for factuality and tone</p>
+            <p>
+              I prototype correction models that rewrite biased spans while preserving facts, guided by saliency maps and
+              counterfactual prompts. Outputs are accompanied by rationales to support editorial review.
+            </p>
+            <div class="project-tech">
+              <strong>Stack:</strong> Seq2seq (mT5), constrained decoding, saliency‑guided span masking, QE filters
+              <div class="metrics">
+                <span class="metric">Human eval</span>
+                <span class="metric">Factual QA checks</span>
+                <span class="metric">Toxicity sanity tests</span>
+              </div>
             </div>
-          </article>
-
-          <article class="post card" data-reveal>
-            <div class="card__body">
-              <h3 class="card__title">Counterfactuals for Bias Correction</h3>
-              <p class="card__desc">Using controlled edits and constraints to neutralize bias without losing meaning.</p>
-              <a href="#" class="link">Read post →</a>
-            </div>
+            <details class="snippet">
+              <summary>Saliency‑guided masking pipeline</summary>
+              <pre><code># pipeline.yaml (excerpt)
+steps:
+  - saliency: grad_x_input, topk: 0.2
+  - mask_spans: strategy: contiguous, max_len: 12
+  - generate: model: mt5-small-bn, decode: constrained, max_new_tokens: 80
+  - verify: factual_qa + lexical_consistency + toxicity
+  - log: rationale_spans, diffs, pass/fail</code></pre>
+            </details>
           </article>
         </div>
-      </div>
 
-      <svg class="section-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,0 C300,120 1140,-120 1440,0 L1440,120 L0,120 Z" fill="currentColor"></path>
-      </svg>
-    </section>
-
-    <!-- About -->
-    <section class="section alt" id="about" aria-label="About">
-      <div class="container about">
-        <div class="about__text" data-reveal>
-          <h2>About</h2>
-          <p>I’m a researcher at United International University focusing on bias detection and correction in Bengali news. I care about transparent, reproducible pipelines, and building tools that help journalists and readers see how language shapes perception.</p>
-          <ul class="bullets">
-            <li><strong>Focus:</strong> Bias detection, counterfactual rewriting, explainability</li>
-            <li><strong>Models:</strong> BanglaBERT, mBERT, instruction-tuned LMs</li>
-            <li><strong>Values:</strong> Reproducibility, clarity, human-centered evaluation</li>
+        <div class="card">
+          <h3>Reproducibility checklist</h3>
+          <ul class="inline">
+            <li><strong>Seeds:</strong> Multiple seeds with mean/std reporting</li>
+            <li><strong>Data:</strong> Versioned splits, leakage checks, labeling schema</li>
+            <li><strong>Code:</strong> Config‑driven runs, hash‑named artifacts</li>
+            <li><strong>Docs:</strong> Model cards and dataset statements</li>
           </ul>
-          <div class="skills">
-            <span class="chip">Python</span>
-            <span class="chip">PyTorch</span>
-            <span class="chip">Hugging Face</span>
-            <span class="chip">FastAPI</span>
-            <span class="chip">D3.js</span>
-            <span class="chip">Weights & Biases</span>
-          </div>
         </div>
-        <div class="about__media" data-reveal>
-          <div class="glass panel">
-            <h3 class="panel__title">What I’m exploring</h3>
-            <ul class="todo">
-              <li><strong>Benchmark:</strong> Cross-outlet bias contrast sets for Bengali</li>
-              <li><strong>Correction:</strong> Style-preserving edits with factual constraints</li>
-              <li><strong>UI:</strong> Rationales-as-highlights for journalist workflows</li>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-alt reveal">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <article class="card">
+          <h3>BiasAware BN‑News</h3>
+          <p class="meta">End‑to‑end pipeline for bias detection and correction in Bengali</p>
+          <p>
+            Modular components for data collection, annotation aid, detectors, counterfactual rewriting,
+            and a lightweight reviewer UI. Emphasis on transparency and editorial utility.
+          </p>
+          <div class="project-tech">
+            <strong>Tech:</strong> PyTorch, Transformers, FastAPI, Docker, ONNX, Streamlit
+            <div class="metrics">
+              <span class="metric">Macro‑F1 ↑</span>
+              <span class="metric">ECE ↓</span>
+              <span class="metric">Human accept rate ↑</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>LifeLink</h3>
+          <p class="meta">Full‑stack app (social impact)</p>
+          <p>A clean, responsive build with attention to reliability and accessibility.</p>
+          <div class="project-tech">
+            <strong>Tech:</strong> React, Node, Postgres, Auth, CI/CD
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Pharma Blockchain</h3>
+          <p class="meta">Traceability and integrity</p>
+          <p>Practical ledger design with measured trade‑offs between throughput and auditability.</p>
+          <div class="project-tech">
+            <strong>Tech:</strong> Solidity, Hardhat, IPFS, Next.js
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section reveal">
+      <div class="container">
+        <h2>Publications</h2>
+        <div class="card">
+          <p>
+            Preprint under submission: Bias Detection and Correction in Bengali News — Methods, Benchmarks, and Editorial
+            Interpretability. I’ll add DOI and camera‑ready links here upon acceptance.
+          </p>
+          <ul class="pubs">
+            <li>
+              <strong>Malakar, S.</strong> Bias‑Aware Bengali News: Detection, Correction, and Explainability (under review)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section section-alt reveal">
+      <div class="container">
+        <h2>Experience</h2>
+
+        <div class="card">
+          <h3>Researcher — CENTeR, United International University</h3>
+          <p class="meta">Dhaka, Bangladesh</p>
+          <ul class="bulleted">
+            <li><strong>Lead:</strong> Bias detection/correction for Bengali news with transformers (BanglaBERT, mBERT)</li>
+            <li><strong>Design:</strong> Annotation schema, QA, and inter‑annotator agreement processes</li>
+            <li><strong>Ship:</strong> Reproducible pipelines, model cards, dataset statements, and reviewer tools</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section reveal">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>NLP and ML</h3>
+            <ul class="bulleted">
+              <li><strong>Transformers:</strong> BanglaBERT, mBERT, XLM‑R</li>
+              <li><strong>Bias & Fairness:</strong> Detection, mitigation, audits</li>
+              <li><strong>Explainability:</strong> Saliency, rationales, calibration</li>
+              <li><strong>Eval:</strong> Macro‑F1, ECE, slice analysis, ablations</li>
             </ul>
           </div>
-          <div class="glass panel">
-            <h3 class="panel__title">Availability</h3>
-            <p>Open to collaborations on bias-aware NLP, dataset design, and explainable tools.</p>
-            <a class="btn btn--primary w-100" href="#contact">Start a conversation</a>
+          <div class="card">
+            <h3>Engineering</h3>
+            <ul class="bulleted">
+              <li><strong>Pipelines:</strong> Python, PyTorch, FastAPI</li>
+              <li><strong>Ops:</strong> Docker, DVC, GitHub Actions</li>
+              <li><strong>Frontend:</strong> HTML/CSS/JS, accessibility</li>
+              <li><strong>Docs:</strong> IEEE style, model/dataset cards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education / Certifications / More -->
+    <section id="more" class="section section-alt reveal">
+      <div class="container">
+        <h2>Education and more</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Education</h3>
+            <ul class="bulleted">
+              <li><strong>Graduate‑level CS:</strong> NLP, Machine Learning, AI Ethics</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Certifications</h3>
+            <ul class="bulleted">
+              <li><strong>ML/NLP:</strong> Add your verified certifications with links</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Volunteering & honors</h3>
+            <ul class="bulleted">
+              <li><strong>Community:</strong> GOVT. Science College Science Club (Quizzer)</li>
+              <li><strong>Honors:</strong> Add awards, scholarships, and recognitions</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Languages</h3>
+            <ul class="bulleted">
+              <li><strong>Bengali:</strong> Native</li>
+              <li><strong>English:</strong> Professional</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section class="section" id="contact" aria-label="Contact">
+    <section id="contact" class="section reveal">
       <div class="container">
-        <div class="section__head">
-          <h2>Contact</h2>
-          <p class="section__lede">Have a project or research idea? I’d love to hear from you.</p>
+        <h2>Contact</h2>
+        <div class="card contact">
+          <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+          <ul class="social">
+            <li><a href="https://github.com/your-username" aria-label="GitHub">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/your-username" aria-label="LinkedIn">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=your-id" aria-label="Google Scholar">Google Scholar</a></li>
+          </ul>
+          <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
         </div>
-
-        <form class="form" id="contact-form" action="https://formspree.io/f/your-id" method="POST" novalidate>
-          <div class="form__row">
-            <div class="input">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
-              <span class="input__msg"></span>
-            </div>
-            <div class="input">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="name@example.com" required />
-              <span class="input__msg"></span>
-            </div>
-          </div>
-          <div class="input">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Tell me a bit about what you’re building…" required></textarea>
-            <span class="input__msg"></span>
-          </div>
-          <div class="form__actions">
-            <button type="submit" class="btn btn--primary">Send message</button>
-            <a class="btn btn--ghost" href="mailto:hello@example.com">Or email directly</a>
-          </div>
-          <p class="form__note">By contacting me, you agree to be reached back regarding your inquiry.</p>
-        </form>
       </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer__brand">
-          <div class="brand brand--muted">
-            <span class="brand__mark">SM</span>
-            <span class="brand__name">Swagotam Malakar</span>
-          </div>
-          <p class="muted">Bias-aware NLP for Bengali news. Built with care, accessible by design.</p>
-        </div>
-        <nav class="footer__nav" aria-label="Footer">
-          <a href="#work">Work</a>
-          <a href="#research">Research</a>
-          <a href="#writing">Writing</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="footer__social">
-          <a href="https://github.com/" aria-label="GitHub">GitHub</a>
-          <a href="https://scholar.google.com/" aria-label="Google Scholar">Scholar</a>
-          <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
-          <a href="mailto:hello@example.com" aria-label="Email">Email</a>
-        </div>
-      </div>
-      <div class="footer__legal">
-        <div class="container small muted">© <span id="year"></span> Swagotam Malakar. All rights reserved.</div>
-      </div>
-    </footer>
-
-    <!-- Project modal -->
-    <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-modal="false">
-      <div class="modal__backdrop" data-close-modal></div>
-      <div class="modal__dialog" role="document">
-        <button class="modal__close" aria-label="Close" data-close-modal>
-          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
-        <div class="modal__content">
-          <h3 id="modal-title">Project</h3>
-          <p class="modal__desc">Details will appear here.</p>
-          <div class="modal__gallery" aria-label="Project images">
-            <img src="assets/img/project-1.jpg" alt="" />
-          </div>
-          <div class="modal__links">
-            <a href="#" class="btn btn--primary" target="_blank" rel="noopener">Live demo</a>
-            <a href="#" class="btn btn--ghost" target="_blank" rel="noopener">Source</a>
-          </div>
-        </div>
-      </div>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Swagotam Malakar • Built with care for truth in Bengali NLP</p>
     </div>
+  </footer>
 
-    <!-- Back to top -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0l-7 7m7-7l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Swagotam Malakar",
+    "jobTitle": "NLP Researcher",
+    "affiliation": "United International University",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "Bangladesh" },
+    "url": "https://your-domain.example",
+    "sameAs": [
+      "https://github.com/your-username",
+      "https://www.linkedin.com/in/your-username",
+      "https://scholar.google.com/citations?user=your-id"
+    ]
+  }
+  </script>
 
-    <!-- Scripts -->
-    <script src="js/app.js"></script>
-  </body>
+  <!-- App -->
+  <script src="app.js" defer></script>
+</body>
 </html>
