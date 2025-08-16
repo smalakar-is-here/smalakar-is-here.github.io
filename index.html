@@ -9,100 +9,422 @@
   <meta property="og:description" content="Projects, research, certifications, and ways to contact me." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://smalakar-is-here.github.io" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg: #ffffff;
-      --fg: #111827;
-      --muted: #6b7280;
-      --card: #fbfbfd;
-      --accent: #2563eb;
-      --border: #e6e6e6;
-      --shadow: 0 6px 18px rgba(16,24,40,0.06);
-      --max-width: 980px;
+      --bg-secondary: #f8fafc;
+      --fg: #0f172a;
+      --muted: #64748b;
+      --card: #ffffff;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --max-width: 1100px;
+      --radius: 16px;
+      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0b0b0b;
-        --fg: #f2f2f2;
-        --muted: #9ca3af;
-        --card: #0f1724;
+        --bg: #0f172a;
+        --bg-secondary: #1e293b;
+        --fg: #f1f5f9;
+        --muted: #94a3b8;
+        --card: #1e293b;
         --accent: #60a5fa;
-        --border: #1f2937;
-        --shadow: 0 6px 18px rgba(2,6,23,0.6);
+        --accent-hover: #3b82f6;
+        --border: #334155;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+        --shadow: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+        --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.5), 0 10px 10px -5px rgba(0,0,0,0.4);
       }
     }
 
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
-    body { font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    * { box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
+    html, body { 
+      margin: 0; 
+      padding: 0; 
+      background: var(--bg); 
+      color: var(--fg); 
+    }
+    
+    body { 
+      font: 16px/1.6 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a { 
+      color: var(--accent); 
+      text-decoration: none; 
+      transition: all 0.2s ease;
+    }
+    
+    a:hover { 
+      color: var(--accent-hover);
+      text-decoration: none; 
+    }
 
-    header { padding: 2.5rem 1rem 1rem; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.01) 100%); }
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1rem 2.5rem; }
+    /* Header Styles */
+    header { 
+      padding: 3rem 1rem 1.5rem; 
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      opacity: 0.03;
+      pointer-events: none;
+    }
 
-    .hero { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: center; }
-    .avatar { width: 110px; height: 110px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); object-fit: cover; box-shadow: var(--shadow); }
-    h1 { font-size: 1.8rem; margin: 0; letter-spacing: -0.01em; }
-    .tagline { color: var(--muted); margin-top: .15rem; font-weight: 500; }
-    .meta { color: var(--muted); font-size: .95rem; margin-top: .35rem; }
+    .container { 
+      max-width: var(--max-width); 
+      margin: 0 auto; 
+      padding: 0 1.5rem 3rem; 
+    }
 
-    nav { margin-top: 0.8rem; }
-    nav a { margin-right: 0.9rem; font-weight: 600; font-size: .95rem; color: var(--fg); opacity: .9; }
+    .hero { 
+      display: grid; 
+      grid-template-columns: 120px 1fr; 
+      gap: 1.5rem; 
+      align-items: center; 
+    }
+    
+    .avatar { 
+      width: 120px; 
+      height: 120px; 
+      border-radius: 50%; 
+      background: var(--gradient);
+      padding: 3px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--bg);
+    }
+    
+    .avatar:hover {
+      transform: scale(1.05);
+    }
+    
+    h1 { 
+      font-size: 2.5rem; 
+      font-weight: 700;
+      margin: 0; 
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    
+    .tagline { 
+      color: var(--muted); 
+      margin-top: 0.5rem; 
+      font-weight: 500; 
+      font-size: 1.1rem;
+    }
+    
+    .location { 
+      color: var(--muted); 
+      font-size: 0.95rem; 
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .location::before {
+      content: "📍";
+    }
 
-    section { padding: 2rem 0 1rem; }
-    h2 { font-size: 1.25rem; margin: 0 0 1rem; }
+    /* Navigation */
+    nav { 
+      margin-top: 1.5rem; 
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    nav a { 
+      padding: 0.5rem 1rem;
+      font-weight: 600; 
+      font-size: 0.95rem; 
+      color: var(--fg); 
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    
+    nav a:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
 
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.15rem; margin: .85rem 0; box-shadow: var(--shadow); }
+        /* Section Styles */
+    section { 
+      padding: 3rem 0 1.5rem; 
+    }
+    
+    section:nth-child(even) {
+      background: var(--bg-secondary);
+      margin: 0 -1.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    h2 { 
+      font-size: 1.75rem; 
+      font-weight: 700;
+      margin: 0 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
 
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    @media (max-width: 900px) { .hero { grid-template-columns: 84px 1fr; } .row { grid-template-columns: 1fr; } }
+    /* Card Styles */
+    .card { 
+      background: var(--card); 
+      border: 1px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 1.5rem; 
+      margin: 1rem 0; 
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    
+    .card strong {
+      font-size: 1.1rem;
+      color: var(--fg);
+    }
 
-    .meta { color: var(--muted); font-size: .95rem; }
-    .pill { display:inline-block; padding:.28rem .7rem; border:1px solid var(--border); border-radius:999px; margin:.25rem .4rem 0 0; font-size:.86rem; background: transparent; color:var(--muted); }
+    /* Grid Layouts */
+    .grid-2 { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 1rem; 
+    }
+    
+    @media (max-width: 768px) { 
+      .hero { 
+        grid-template-columns: 80px 1fr;
+        gap: 1rem;
+      }
+      .avatar { width: 80px; height: 80px; }
+      h1 { font-size: 1.875rem; }
+      .grid-2 { grid-template-columns: 1fr; }
+      nav { gap: 0.375rem; }
+      nav a { padding: 0.375rem 0.75rem; font-size: 0.875rem; }
+    }
 
-    ul.inline { padding:0; margin:.35rem 0 0; list-style:none; }
-    ul.inline li { display:inline; margin-right:.85rem; }
+    /* Meta Info */
+    .meta { 
+      color: var(--muted); 
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+    }
+    
+    /* Pills/Tags */
+    .pill { 
+      display: inline-flex;
+      align-items: center;
+      padding: 0.375rem 0.875rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      margin: 0.25rem 0.25rem 0.25rem 0;
+      font-size: 0.875rem;
+      background: var(--bg);
+      color: var(--muted);
+      transition: all 0.2s ease;
+    }
+    
+    .pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
 
-    /* Certificates grid */
-    #certs .row { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .cert-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0.75rem; }
-    .cert-list .card { padding: .75rem; display:flex; flex-direction:column; justify-content:space-between; }
-    .cert-list a { color: var(--accent); font-weight:600; }
+    /* Skills Grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
 
-    @media (max-width:700px) { .cert-list { grid-template-columns: 1fr; } }
+    /* Lists */
+    ul {
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    ul.inline { 
+      padding: 0; 
+      margin: 1rem 0 0; 
+      list-style: none;
+            display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    ul.inline li { 
+      display: flex;
+      align-items: center;
+    }
+    
+    ul.inline li::before {
+      content: "→";
+      margin-right: 0.5rem;
+      color: var(--accent);
+    }
 
-    /* Skills grid after certifications */
-    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .6rem; }
-    @media (max-width:900px) { .skills-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width:600px) { .skills-grid { grid-template-columns: 1fr; } }
-    .skills-grid .pill { display:inline-flex; align-items:center; justify-content:center; width:100%; background:transparent; border-radius:8px; padding:.6rem; text-align:center; border:1px solid var(--border); }
+    /* Project Cards */
+    .project-tech {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
 
-    footer { border-top: 1px solid var(--border); padding: 1rem; color: var(--muted); font-size: .95rem; }
-    .subtle { color: var(--muted); }
+    /* Certifications Grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: all 0.3s ease;
+    }
+    
+    .cert-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+    
+    .cert-card strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--fg);
+    }
+    
+    .cert-card a {
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
 
-    /* Small utility */
-    .muted { color: var(--muted); }
+    /* Contact Section */
+    #contact {
+      text-align: center;
+      padding: 4rem 0;
+    }
+    
+    #contact p {
+      font-size: 1.125rem;
+      margin: 1rem 0;
+    }
+    
+    #contact a {
+      font-weight: 600;
+      margin: 0 0.5rem;
+    }
+
+    /* Footer */
+    footer { 
+      border-top: 1px solid var(--border); 
+      padding: 2rem 1rem; 
+      text-align: center;
+      color: var(--muted); 
+      font-size: 0.875rem;
+      background: var(--bg-secondary);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    section {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    /* Utility Classes */
+    .subtle { 
+      color: var(--muted); 
+      font-size: 0.875rem;
+    }
+    
+    .mb-0 { margin-bottom: 0; }
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <div class="hero">
-        <img class="avatar" src="assets/images/profile.jpg" alt="Profile photo of Swagotam Malakar" />
+        <div class="avatar">
+          <img src="assets/images/profile.jpg" alt="Profile photo of Swagotam Malakar" />
+        </div>
         <div>
           <h1>Swagotam Malakar</h1>
           <div class="tagline">Author • Tech Enthusiast • CS Graduate</div>
-          <div class="meta">Dhaka, Bangladesh</div>
+          <div class="location">Dhaka, Bangladesh</div>
           <nav>
             <a href="#about">About</a>
-            <a href="#experience">Experience</a>
+                        <a href="#experience">Experience</a>
             <a href="#education">Education</a>
             <a href="#projects">Projects</a>
-            <a href="#certs">Certifications</a>
+            <a href="#certifications">Certifications</a>
             <a href="#skills">Skills</a>
-            <a href="#volunteering">Volunteering</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>
@@ -110,257 +432,303 @@
     </div>
   </header>
 
-  <main class="container">
-        <section id="about">
-      <h2>About</h2>
-      <p>
-        An author in the living world and a lifelong learner with deep academic curiosity across computer science, science & technology, astrophysics, theoretical physics, and applied mathematics.
-        I’m currently a researcher at the Center for Emerging Networks and Technologies Research (CENTeR) at United International University, focusing on practical, impactful technology.
-        I enjoy building full‑stack systems and exploring networks, cybersecurity, AI, and systems research that helps people at scale.
-      </p>
+  <main>
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          An author in the living world and a lifelong learner with deep academic curiosity across computer science, science & technology, astrophysics, theoretical physics, and applied mathematics.
+          I'm currently a researcher at the Center for Emerging Networks and Technologies Research (CENTeR) at United International University, focusing on practical, impactful technology.
+          I enjoy building full‑stack systems and exploring networks, cybersecurity, AI, and systems research that helps people at scale.
+        </p>
+      </div>
     </section>
 
     <section id="experience">
-      <h2>Experience</h2>
-      <div class="card">
-        <strong>Researcher</strong> · Center for Emerging Networks and Technologies Research (CENTeR), United International University
-        <div class="meta">Dhaka, Bangladesh · Nov 2024 – Present · On‑site</div>
-        <p>Academic and applied research in emerging networks, cybersecurity, and systems; contributing to prototypes, literature reviews, and collaborative projects.</p>
-      </div>
-      <div class="card">
-        <strong>Quizzer</strong> · GOVT. Science College Science Club
-        <div class="meta">2018 – 2020</div>
-        <p>Active participant in academic quiz competitions and knowledge‑sharing activities.</p>
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="card">
+          <strong>Researcher</strong>
+          <div class="meta">Center for Emerging Networks and Technologies Research (CENTeR), UIU • Nov 2024 – Present</div>
+          <p>Academic and applied research in emerging networks, cybersecurity, and systems; contributing to prototypes, literature reviews, and collaborative projects.</p>
+        </div>
+        <div class="card">
+          <strong>Quizzer</strong>
+          <div class="meta">GOVT. Science College Science Club • 2018 – 2020</div>
+          <p>Active participant in academic quiz competitions and knowledge‑sharing activities.</p>
+        </div>
       </div>
     </section>
-        <section id="education">
-      <h2>Education</h2>
-      <div class="card">
-        <strong>BSc (Engineering), Computer Science & Engineering</strong> · United International University
-        <div class="meta">2022 – 2026</div>
-      </div>
-      <div class="card">
-        <strong>HSC, Science</strong> · Government Science College
-        <div class="meta">2018 – 2020 · GPA 5.00</div>
-      </div>
-      <div class="card">
-        <strong>SSC, Science</strong> · Jury Govt. Model High School
-        <div class="meta">2013 – 2018 · GPA 5.00</div>
+
+    <section id="education">
+      <div class="container">
+        <h2>Education</h2>
+        <div class="card">
+          <strong>BSc (Engineering), Computer Science & Engineering</strong>
+          <div class="meta">United International University • 2022 – 2026</div>
+        </div>
+        <div class="card">
+          <strong>HSC, Science</strong>
+          <div class="meta">Government Science College • 2018 – 2020 • GPA 5.00</div>
+        </div>
+        <div class="card">
+          <strong>SSC, Science</strong>
+          <div class="meta">Jury Govt. Model High School • 2013 – 2018 • GPA 5.00</div>
+        </div>
       </div>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
-
-      <div class="card">
-        <strong>LifeLink: A Comprehensive All‑in‑One Service Platform for Bangladesh</strong>
-        <div class="meta">Feb 2025 – Jun 2025</div>
-        <p>
-          A full‑stack digital platform unifying essential services (healthcare, shopping, education, employment, housing, vehicle services) into one responsive system.
-          Custom MVC‑like architecture, robust auth, unified cart/payment, chatbot assistant, role‑based access.
-        </p>
-        <ul>
-          <li>8 service modules · 39 DB tables · 156 API endpoints · 45K+ LOC</li>
-          <li>Avg load time: 2.3s; concurrent users: 10,000+</li>
-          <li>Responsive UI, multilingual‑ready, positive stakeholder feedback</li>
-        </ul>
-        <p class="subtle">
-          Frontend: HTML5, CSS3, JavaScript (ES6+), Tailwind CSS ·
-          Backend: PHP 7.4+, MySQL 5.7+, Apache/Nginx, PDO, MVC ·
-          Tools: JIRA, Git ·
-          Security: CSRF protection, session handling, hashed auth ·
-          Other: bKash/Nagad/Rocket integration, basic AI chatbot, cross‑module cart
-        </p>
-        <ul class="inline">
-          <li><a href="https://github.com/smalakar-is-here/lifelink">Code (GitHub)</a></li>
-          <li><a href="assets/projects/lifelink/LifeLink-Overview.pdf">Project PDF</a></li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <strong>Blockchain for Pharmaceutical Supply Chain Integrity (Counterfeit Drug Prevention in Bangladesh)</strong>
-        <p>
-          Research and strategy on applying blockchain to enhance end‑to‑end traceability and compliance in pharma supply chains, with emphasis on Bangladesh’s context.
-        </p>
-        <ul>
-          <li>Analyzed vulnerabilities across manufacturing, distribution, and retail to identify counterfeit entry points.</li>
-          <li>Outlined a blockchain‑based traceability design to ensure product authenticity from source to patient.</li>
-          <li>Assessed costs, regulatory alignment, and collaboration needs across stakeholders.</li>
-          <li>Proposed phased rollout and governance to overcome adoption challenges.</li>
-        </ul>
-        <ul class="inline">
-          <li><a href="assets/projects/blockchain/Pharma-Blockchain-Whitepaper.pdf">Project PDF</a></li>
-        </ul>
-      </div>
-    </section>
-        <section id="certs">
-      <h2>Certifications</h2>
-      <div class="row">
-        <div>
-          <div class="card">
-            <strong>CCNA: Introduction to Networks</strong> · Cisco Networking Academy
-            <div class="meta"><a href="assets/certificates/ccna-itn-swagotam-malakar.pdf">View certificate (PDF)</a></div>
+      <div class="container">
+        <h2>Projects</h2>
+        
+        <div class="card">
+          <strong>LifeLink: A Comprehensive All‑in‑One Service Platform for Bangladesh</strong>
+          <div class="meta">Feb 2025 – Jun 2025</div>
+          <p>
+            A full‑stack digital platform unifying essential services (healthcare, shopping, education, employment, housing, vehicle services) into one responsive system.
+            Custom MVC‑like architecture, robust auth, unified cart/payment, chatbot assistant, role‑based access.
+          </p>
+          <ul>
+                      <li>8 service modules • 39 DB tables • 156 API endpoints • 45K+ LOC</li>
+            <li>Avg load time: 2.3s; concurrent users: 10,000+</li>
+            <li>Responsive UI, multilingual‑ready, positive stakeholder feedback</li>
+          </ul>
+          <div class="project-tech">
+            <strong>Technologies:</strong> HTML5, CSS3, JavaScript (ES6+), Tailwind CSS, PHP 7.4+, MySQL 5.7+, Apache/Nginx, PDO, MVC, JIRA, Git, CSRF protection, bKash/Nagad/Rocket integration
           </div>
-          <div class="card">
-            <strong>Introduction to Cybersecurity</strong> · Cisco Networking Academy
-            <div class="meta"><a href="assets/certificates/introduction-to-cybersecurity.pdf">View certificate (PDF)</a></div>
-          </div>
-          <div class="card">
-            <strong>Cybersecurity Essentials</strong> · Cisco Networking Academy
-            <div class="meta"><a href="assets/certificates/cybersecurity-essentials.pdf">View certificate (PDF)</a></div>
-          </div>
-          <div class="card">
-            <strong>Cybersecurity for Engineers</strong> · CENTeR
-            <div class="meta"><a href="assets/certificates/cybersecurity-for-engineers.pdf">View certificate (PDF)</a></div>
-          </div>
-          <div class="card">
-            <strong>DevOps for Engineers</strong> · CENTeR
-            <div class="meta"><a href="assets/certificates/devops-for-engineers.pdf">View certificate (PDF)</a></div>
-          </div>
-          <div class="card">
-            <strong>NDG Linux Essentials</strong> · Cisco Networking Academy
-            <div class="meta"><a href="assets/certificates/ndg-linux-essentials.pdf">View certificate (PDF)</a></div>
-          </div>
+          <ul class="inline">
+            <li><a href="https://github.com/smalakar-is-here/lifelink">View Code</a></li>
+            <li><a href="assets/projects/lifelink/LifeLink-Overview.pdf">Project PDF</a></li>
+          </ul>
         </div>
-        <div>
-          <div class="card">
-            <strong>CLA/CLE: C Programming</strong> · Cisco NetAcad / C++ Institute
-            <div class="meta">
-              <a href="assets/certificates/cla-programming-essentials-in-c.pdf">CLA: Programming Essentials in C</a> ·
-              <a href="assets/certificates/cle-entry-level-c.pdf">CLE: Entry‑Level C</a> ·
-              <a href="assets/certificates/c-essentials-1.pdf">C Essentials 1</a> ·
-              <a href="assets/certificates/c-essentials-2.pdf">C Essentials 2</a>
-            </div>
-          </div>
-          <div class="card">
-            <strong>PCAP: Programming Essentials in Python</strong> · OpenEDG Python Institute
-            <div class="meta">Skills: Python</div>
-          </div>
-          <div class="card">
-            <strong>Python (Basic)</strong> · HackerRank · Credential ID: 44071A1998CB
-            <div class="meta"><a href="assets/certificates/hackerrank-python-basic.pdf">View certificate (PDF)</a></div>
-          </div>
-          <div class="card">
-            <strong>JavaScript Essentials 1 (JSE)</strong> · JavaScript Institute</div>
-          <div class="card">
-            <strong>Red Hat System Administration I & II (RH124, RH134)</strong> · Ver. 9.3
-            <div class="meta">
-              <a href="assets/certificates/red-hat-rh124.pdf">RH124</a> ·
-              <a href="assets/certificates/red-hat-rh134.pdf">RH134</a> ·
-              <a href="assets/certificates/rh104-attendance.pdf">Linux Fundamentals (RH104) – Attendance</a>
-            </div>
-          </div>
-          <div class="card">
-            <strong>Python/Java Courses (Udemy)</strong>
-            <div class="meta">
-              <a href="assets/certificates/udemy-python-complete-beginners.pdf">Python Complete Course for Beginners</a> ·
-              <a href="assets/certificates/udemy-python-basics-to-advanced.pdf">Python Basics to Advanced</a> ·
-              <a href="assets/certificates/udemy-python-bootcamp-2022.pdf">Python Bootcamp 2022</a> ·
-              <a href="assets/certificates/udemy-java-beginner-to-advanced.pdf">Java Programming</a> ·
-              <a href="assets/certificates/udemy-leetcode-top-interview-java.pdf">LeetCode Top Interview in Java (2024)</a>
-            </div>
-          </div>
-          <div class="card">
-            <strong>CS106A: Python Programming (Code in Place)</strong> · Stanford University
-          </div>
-          <div class="card">
-            <strong>Fundamentals of Digital Marketing</strong> · Google Digital Garage
-          </div>
-          <div class="card">
-            <strong>Medical Education in the Post‑COVID‑19 Era</strong> · Harvard Medical School
-          </div>
+
+        <div class="card">
+          <strong>Blockchain for Pharmaceutical Supply Chain Integrity</strong>
+          <div class="meta">Counterfeit Drug Prevention in Bangladesh</div>
+          <p>
+            Research and strategy on applying blockchain to enhance end‑to‑end traceability and compliance in pharma supply chains, with emphasis on Bangladesh's context.
+          </p>
+          <ul>
+            <li>Analyzed vulnerabilities across manufacturing, distribution, and retail</li>
+            <li>Designed blockchain‑based traceability for product authenticity</li>
+            <li>Assessed costs, regulatory alignment, and stakeholder collaboration</li>
+            <li>Proposed phased rollout and governance framework</li>
+          </ul>
+          <ul class="inline">
+            <li><a href="assets/projects/blockchain/Pharma-Blockchain-Whitepaper.pdf">View Whitepaper</a></li>
+          </ul>
         </div>
       </div>
-      <p class="subtle">Tip: place your PDFs in assets/certificates/ and update the links above to match your file names.</p>
     </section>
-+
-+    <section id="skills">
-+      <h2>Skills</h2>
-+      <div>
-+        <span class="pill">HTML5</span>
-+        <span class="pill">CSS3</span>
-+        <span class="pill">Tailwind CSS</span>
-+        <span class="pill">Responsive Design</span>
-+        <span class="pill">JavaScript (ES6+)</span>
-+        <span class="pill">PHP</span>
-+        <span class="pill">MySQL</span>
-+        <span class="pill">Apache</span>
-+        <span class="pill">Nginx</span>
-+        <span class="pill">MVC</span>
-+        <span class="pill">PDO</span>
-+        <span class="pill">Git</span>
-+        <span class="pill">JIRA</span>
-+        <span class="pill">CSRF Protection</span>
-+        <span class="pill">Python</span>
-+        <span class="pill">TensorFlow</span>
-+        <span class="pill">Keras</span>
-+        <span class="pill">PyTorch</span>
-+        <span class="pill">Computer Vision</span>
-+        <span class="pill">Machine Learning</span>
-+        <span class="pill">Data Analysis</span>
-+        <span class="pill">Data Mining</span>
-+        <span class="pill">C</span>
-+        <span class="pill">C++</span>
-+        <span class="pill">Java</span>
-+        <span class="pill">R</span>
-+        <span class="pill">SQL</span>
-+        <span class="pill">Linux</span>
-+        <span class="pill">Networking (CCNA)</span>
-+        <span class="pill">Blockchain</span>
-+        <span class="pill">Quantum Computing</span>
-+        <span class="pill">LaTeX</span>
-+        <span class="pill">Leadership</span>
-+        <span class="pill">Communication</span>
-+        <span class="pill">Public Speaking</span>
-+        <span class="pill">Time Management</span>
-+        <span class="pill">Team Coordination</span>
-+      </div>
-+    </section>
-+        <section id="volunteering">
-+      <h2>Volunteering</h2>
-+      <div class="card">
-+        <strong>Scout</strong> · Bangladesh Scouts
-+        <div class="meta">Jan 2010 – May 2018 · 8 yrs 5 mos</div>
-+      </div>
-+      <div class="card">
-+        <strong>Quizzer</strong> · Government Science College Science Club
-+        <div class="meta">Jul 2018 – Mar 2020</div>
-+      </div>
-+    </section>
-+
-+    <section id="honors">
-+      <h2>Honors & Awards</h2>
-+      <div class="card">
-+        <strong>Board Scholarships</strong> · Board of Intermediate and Secondary Education, Sylhet
-+        <p class="meta">Awarded in 2012 (PSC), 2015 (JSC), and 2018 (SSC)</p>
-+      </div>
-+    </section>
-+
-+    <section id="languages">
-+      <h2>Languages</h2>
-+      <div class="card">
-+        <span class="pill">Bengali — Native or bilingual</span>
-+        <span class="pill">English — Full professional</span>
-+        <span class="pill">Hindi — Professional working</span>
-+      </div>
-+    </section>
-+
-+    <section id="contact">
-+      <h2>Contact</h2>
-+      <p>
-+        <a href="mailto:smalakar2231068@bscse.uiu.ac.bd">smalakar2231068@bscse.uiu.ac.bd</a> ·
-+        <a href="https://github.com/smalakar-is-here">GitHub</a> ·
-+        <a href="https://www.linkedin.com/in/swagotam-malakar/">LinkedIn</a>
-+      </p>
-+      <p>
-+        <a href="assets/resume/Swagotam-Malakar-Resume.pdf">Download Résumé (PDF)</a>
-+      </p>
-+    </section>
-+  </main>
-+
-+  <footer class="container">
-+    <p>© <span id="year"></span> Swagotam Malakar · Built with GitHub Pages</p>
-+  </footer>
-+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-+</body>
-+</html>
+
+    <section id="certifications">
+      <div class="container">
+        <h2>Certifications</h2>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <strong>CCNA: Introduction to Networks</strong>
+            <div class="meta">Cisco Networking Academy</div>
+            <a href="assets/certificates/ccna-itn-swagotam-malakar.pdf">View certificate</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>Cybersecurity Essentials</strong>
+            <div class="meta">Cisco Networking Academy</div>
+            <a href="assets/certificates/cybersecurity-essentials.pdf">View certificate</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>DevOps for Engineers</strong>
+            <div class="meta">CENTeR</div>
+            <a href="assets/certificates/devops-for-engineers.pdf">View certificate</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>Python Programming</strong>
+            <div class="meta">Multiple Certifications</div>
+            <a href="assets/certificates/hackerrank-python-basic.pdf">HackerRank</a> • 
+            <a href="assets/certificates/pcap-python.pdf">PCAP</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>Red Hat System Administration</strong>
+                        <div class="meta">RH124 & RH134 • Ver. 9.3</div>
+            <a href="assets/certificates/red-hat-rh124.pdf">RH124</a> • 
+            <a href="assets/certificates/red-hat-rh134.pdf">RH134</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>C/C++ Programming</strong>
+            <div class="meta">C++ Institute</div>
+            <a href="assets/certificates/cla-programming-essentials-in-c.pdf">CLA</a> • 
+            <a href="assets/certificates/cle-entry-level-c.pdf">CLE</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>JavaScript Essentials</strong>
+            <div class="meta">JavaScript Institute</div>
+            <a href="assets/certificates/jse-javascript.pdf">View certificate</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>CS106A: Python Programming</strong>
+            <div class="meta">Stanford University (Code in Place)</div>
+            <a href="assets/certificates/stanford-cs106a.pdf">View certificate</a>
+          </div>
+        </div>
+        <p class="subtle mt-2">+ 15 more certifications including NDG Linux, Digital Marketing, and specialized courses</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <span class="pill">HTML5</span>
+          <span class="pill">CSS3</span>
+          <span class="pill">Tailwind CSS</span>
+          <span class="pill">JavaScript (ES6+)</span>
+          <span class="pill">PHP</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">Python</span>
+          <span class="pill">TensorFlow</span>
+          <span class="pill">PyTorch</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Computer Vision</span>
+          <span class="pill">Data Analysis</span>
+          <span class="pill">C/C++</span>
+          <span class="pill">Java</span>
+          <span class="pill">Git</span>
+          <span class="pill">Linux</span>
+          <span class="pill">CCNA Networking</span>
+          <span class="pill">Blockchain</span>
+          <span class="pill">Quantum Computing</span>
+          <span class="pill">LaTeX</span>
+          <span class="pill">Apache/Nginx</span>
+          <span class="pill">MVC Architecture</span>
+          <span class="pill">JIRA</span>
+          <span class="pill">Leadership</span>
+          <span class="pill">Public Speaking</span>
+          <span class="pill">Team Coordination</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="volunteering">
+      <div class="container">
+        <h2>Volunteering & Activities</h2>
+        <div class="grid-2">
+          <div class="card">
+            <strong>Scout</strong>
+            <div class="meta">Bangladesh Scouts • Jan 2010 – May 2018</div>
+            <p>8 years of service in scouting, developing leadership and community service skills.</p>
+          </div>
+          <div class="card">
+            <strong>Science Club Quizzer</strong>
+            <div class="meta">Government Science College • Jul 2018 – Mar 2020</div>
+            <p>Active participant in academic quiz competitions and knowledge-sharing activities.</p>
+          </div>
+        </div>
+        
+        <div class="card mt-1">
+          <strong>🏆 Honors & Awards</strong>
+          <p class="mb-0"><strong>Board Scholarships</strong> – Board of Intermediate and Secondary Education, Sylhet</p>
+          <p class="meta">Awarded in 2012 (PSC), 2015 (JSC), and 2018 (SSC) for academic excellence</p>
+        </div>
+        
+        <div class="card mt-1">
+          <strong>🌐 Languages</strong>
+          <div class="skills-grid mt-1">
+            <span class="pill">Bengali – Native</span>
+            <span class="pill">English – Professional</span>
+                       <div class="meta">RH124 & RH134 • Ver. 9.3</div>
+            <a href="assets/certificates/red-hat-rh124.pdf">RH124</a> • 
+            <a href="assets/certificates/red-hat-rh134.pdf">RH134</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>C/C++ Programming</strong>
+            <div class="meta">C++ Institute</div>
+            <a href="assets/certificates/cla-programming-essentials-in-c.pdf">CLA</a> • 
+            <a href="assets/certificates/cle-entry-level-c.pdf">CLE</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>JavaScript Essentials</strong>
+            <div class="meta">JavaScript Institute</div>
+            <a href="assets/certificates/jse-javascript.pdf">View certificate</a>
+          </div>
+          
+          <div class="cert-card">
+            <strong>CS106A: Python Programming</strong>
+            <div class="meta">Stanford University (Code in Place)</div>
+            <a href="assets/certificates/stanford-cs106a.pdf">View certificate</a>
+          </div>
+        </div>
+        <p class="subtle mt-2">+ 15 more certifications including NDG Linux, Digital Marketing, and specialized courses</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <span class="pill">HTML5</span>
+          <span class="pill">CSS3</span>
+          <span class="pill">Tailwind CSS</span>
+          <span class="pill">JavaScript (ES6+)</span>
+          <span class="pill">PHP</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">Python</span>
+          <span class="pill">TensorFlow</span>
+          <span class="pill">PyTorch</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Computer Vision</span>
+          <span class="pill">Data Analysis</span>
+          <span class="pill">C/C++</span>
+          <span class="pill">Java</span>
+          <span class="pill">Git</span>
+          <span class="pill">Linux</span>
+          <span class="pill">CCNA Networking</span>
+          <span class="pill">Blockchain</span>
+          <span class="pill">Quantum Computing</span>
+          <span class="pill">LaTeX</span>
+          <span class="pill">Apache/Nginx</span>
+          <span class="pill">MVC Architecture</span>
+          <span class="pill">JIRA</span>
+          <span class="pill">Leadership</span>
+          <span class="pill">Public Speaking</span>
+          <span class="pill">Team Coordination</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="volunteering">
+      <div class="container">
+        <h2>Volunteering & Activities</h2>
+        <div class="grid-2">
+          <div class="card">
+            <strong>Scout</strong>
+            <div class="meta">Bangladesh Scouts • Jan 2010 – May 2018</div>
+            <p>8 years of service in scouting, developing leadership and community service skills.</p>
+          </div>
+          <div class="card">
+            <strong>Science Club Quizzer</strong>
+            <div class="meta">Government Science College • Jul 2018 – Mar 2020</div>
+            <p>Active participant in academic quiz competitions and knowledge-sharing activities.</p>
+          </div>
+        </div>
+        
+        <div class="card mt-1">
+          <strong>🏆 Honors & Awards</strong>
+          <p class="mb-0"><strong>Board Scholarships</strong> – Board of Intermediate and Secondary Education, Sylhet</p>
+          <p class="meta">Awarded in 2012 (PSC), 2015 (JSC), and 2018 (SSC) for academic excellence</p>
+        </div>
+        
+        <div class="card mt-1">
+          <strong>🌐 Languages</strong>
+          <div class="skills-grid mt-1">
+            <span class="pill">Bengali – Native</span>
+            <span class="pill">English – Professional</span>
+            <span class="pill">Hindi – Working
