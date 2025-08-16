@@ -8,42 +8,82 @@
   <meta property="og:title" content="Swagotam Malakar — Portfolio" />
   <meta property="og:description" content="Projects, research, certifications, and ways to contact me." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourusername.github.io" />
+  <meta property="og:url" content="https://smalakar-is-here.github.io" />
   <style>
     :root {
       --bg: #ffffff;
-      --fg: #111111;
-      --muted: #555;
-      --card: #f8f8f8;
+      --fg: #111827;
+      --muted: #6b7280;
+      --card: #fbfbfd;
       --accent: #2563eb;
       --border: #e6e6e6;
+      --shadow: 0 6px 18px rgba(16,24,40,0.06);
+      --max-width: 980px;
     }
+
     @media (prefers-color-scheme: dark) {
-      :root { --bg:#0b0b0b; --fg:#f2f2f2; --muted:#bbb; --card:#151515; --accent:#60a5fa; --border:#232323; }
+      :root {
+        --bg: #0b0b0b;
+        --fg: #f2f2f2;
+        --muted: #9ca3af;
+        --card: #0f1724;
+        --accent: #60a5fa;
+        --border: #1f2937;
+        --shadow: 0 6px 18px rgba(2,6,23,0.6);
+      }
     }
-    html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); }
-    body { font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+    body { font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    header { padding: 3rem 1rem 1rem; border-bottom: 1px solid var(--border); }
-    .container { max-width: 960px; margin: 0 auto; padding: 0 1rem 2rem; }
-    .hero { display: grid; grid-template-columns: 100px 1fr; gap: 1rem; align-items: center; }
-    .avatar { width: 100px; height: 100px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); object-fit: cover; }
-    h1 { font-size: 2rem; margin: 0; }
-    .tagline { color: var(--muted); margin-top: .25rem; }
-    nav { margin-top: .75rem; }
-    nav a { margin-right: 1rem; font-weight: 600; }
+
+    header { padding: 2.5rem 1rem 1rem; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.01) 100%); }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1rem 2.5rem; }
+
+    .hero { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: center; }
+    .avatar { width: 110px; height: 110px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); object-fit: cover; box-shadow: var(--shadow); }
+    h1 { font-size: 1.8rem; margin: 0; letter-spacing: -0.01em; }
+    .tagline { color: var(--muted); margin-top: .15rem; font-weight: 500; }
+    .meta { color: var(--muted); font-size: .95rem; margin-top: .35rem; }
+
+    nav { margin-top: 0.8rem; }
+    nav a { margin-right: 0.9rem; font-weight: 600; font-size: .95rem; color: var(--fg); opacity: .9; }
+
     section { padding: 2rem 0 1rem; }
-    h2 { font-size: 1.4rem; margin: 0 0 1rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; margin: .75rem 0; }
+    h2 { font-size: 1.25rem; margin: 0 0 1rem; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.15rem; margin: .85rem 0; box-shadow: var(--shadow); }
+
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    @media (max-width: 800px) { .hero { grid-template-columns: 72px 1fr; } .row { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .hero { grid-template-columns: 84px 1fr; } .row { grid-template-columns: 1fr; } }
+
     .meta { color: var(--muted); font-size: .95rem; }
-    .pill { display:inline-block; padding:.25rem .6rem; border:1px solid var(--border); border-radius:999px; margin:.25rem .3rem 0 0; font-size:.85rem; background:transparent; }
-    ul.inline { padding:0; margin:.25rem 0 0; list-style:none; }
-    ul.inline li { display:inline; margin-right:.75rem; }
+    .pill { display:inline-block; padding:.28rem .7rem; border:1px solid var(--border); border-radius:999px; margin:.25rem .4rem 0 0; font-size:.86rem; background: transparent; color:var(--muted); }
+
+    ul.inline { padding:0; margin:.35rem 0 0; list-style:none; }
+    ul.inline li { display:inline; margin-right:.85rem; }
+
+    /* Certificates grid */
+    #certs .row { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .cert-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0.75rem; }
+    .cert-list .card { padding: .75rem; display:flex; flex-direction:column; justify-content:space-between; }
+    .cert-list a { color: var(--accent); font-weight:600; }
+
+    @media (max-width:700px) { .cert-list { grid-template-columns: 1fr; } }
+
+    /* Skills grid after certifications */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .6rem; }
+    @media (max-width:900px) { .skills-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width:600px) { .skills-grid { grid-template-columns: 1fr; } }
+    .skills-grid .pill { display:inline-flex; align-items:center; justify-content:center; width:100%; background:transparent; border-radius:8px; padding:.6rem; text-align:center; border:1px solid var(--border); }
+
     footer { border-top: 1px solid var(--border); padding: 1rem; color: var(--muted); font-size: .95rem; }
     .subtle { color: var(--muted); }
+
+    /* Small utility */
+    .muted { color: var(--muted); }
   </style>
 </head>
 <body>
@@ -132,7 +172,7 @@
           Other: bKash/Nagad/Rocket integration, basic AI chatbot, cross‑module cart
         </p>
         <ul class="inline">
-          <li><a href="https://github.com/your-github-username/lifelink">Code (GitHub)</a></li>
+          <li><a href="https://github.com/smalakar-is-here/lifelink">Code (GitHub)</a></li>
           <li><a href="assets/projects/lifelink/LifeLink-Overview.pdf">Project PDF</a></li>
         </ul>
       </div>
@@ -233,94 +273,94 @@
       </div>
       <p class="subtle">Tip: place your PDFs in assets/certificates/ and update the links above to match your file names.</p>
     </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div>
-        <span class="pill">HTML5</span>
-        <span class="pill">CSS3</span>
-        <span class="pill">Tailwind CSS</span>
-        <span class="pill">Responsive Design</span>
-        <span class="pill">JavaScript (ES6+)</span>
-        <span class="pill">PHP</span>
-        <span class="pill">MySQL</span>
-        <span class="pill">Apache</span>
-        <span class="pill">Nginx</span>
-        <span class="pill">MVC</span>
-        <span class="pill">PDO</span>
-        <span class="pill">Git</span>
-        <span class="pill">JIRA</span>
-        <span class="pill">CSRF Protection</span>
-        <span class="pill">Python</span>
-        <span class="pill">TensorFlow</span>
-        <span class="pill">Keras</span>
-        <span class="pill">PyTorch</span>
-        <span class="pill">Computer Vision</span>
-        <span class="pill">Machine Learning</span>
-        <span class="pill">Data Analysis</span>
-        <span class="pill">Data Mining</span>
-        <span class="pill">C</span>
-        <span class="pill">C++</span>
-        <span class="pill">Java</span>
-        <span class="pill">R</span>
-        <span class="pill">SQL</span>
-        <span class="pill">Linux</span>
-        <span class="pill">Networking (CCNA)</span>
-        <span class="pill">Blockchain</span>
-        <span class="pill">Quantum Computing</span>
-        <span class="pill">LaTeX</span>
-        <span class="pill">Leadership</span>
-        <span class="pill">Communication</span>
-        <span class="pill">Public Speaking</span>
-        <span class="pill">Time Management</span>
-        <span class="pill">Team Coordination</span>
-      </div>
-    </section>
-        <section id="volunteering">
-      <h2>Volunteering</h2>
-      <div class="card">
-        <strong>Scout</strong> · Bangladesh Scouts
-        <div class="meta">Jan 2010 – May 2018 · 8 yrs 5 mos</div>
-      </div>
-      <div class="card">
-        <strong>Quizzer</strong> · Government Science College Science Club
-        <div class="meta">Jul 2018 – Mar 2020</div>
-      </div>
-    </section>
-
-    <section id="honors">
-      <h2>Honors & Awards</h2>
-      <div class="card">
-        <strong>Board Scholarships</strong> · Board of Intermediate and Secondary Education, Sylhet
-        <p class="meta">Awarded in 2012 (PSC), 2015 (JSC), and 2018 (SSC)</p>
-      </div>
-    </section>
-
-    <section id="languages">
-      <h2>Languages</h2>
-      <div class="card">
-        <span class="pill">Bengali — Native or bilingual</span>
-        <span class="pill">English — Full professional</span>
-        <span class="pill">Hindi — Professional working</span>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a> ·
-        <a href="https://github.com/your-github-username">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/swagotam-malakar/">LinkedIn</a>
-      </p>
-      <p>
-        <a href="assets/resume/Swagotam-Malakar-Resume.pdf">Download Résumé (PDF)</a>
-      </p>
-    </section>
-  </main>
-
-  <footer class="container">
-    <p>© <span id="year"></span> Swagotam Malakar · Built with GitHub Pages</p>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
++
++    <section id="skills">
++      <h2>Skills</h2>
++      <div>
++        <span class="pill">HTML5</span>
++        <span class="pill">CSS3</span>
++        <span class="pill">Tailwind CSS</span>
++        <span class="pill">Responsive Design</span>
++        <span class="pill">JavaScript (ES6+)</span>
++        <span class="pill">PHP</span>
++        <span class="pill">MySQL</span>
++        <span class="pill">Apache</span>
++        <span class="pill">Nginx</span>
++        <span class="pill">MVC</span>
++        <span class="pill">PDO</span>
++        <span class="pill">Git</span>
++        <span class="pill">JIRA</span>
++        <span class="pill">CSRF Protection</span>
++        <span class="pill">Python</span>
++        <span class="pill">TensorFlow</span>
++        <span class="pill">Keras</span>
++        <span class="pill">PyTorch</span>
++        <span class="pill">Computer Vision</span>
++        <span class="pill">Machine Learning</span>
++        <span class="pill">Data Analysis</span>
++        <span class="pill">Data Mining</span>
++        <span class="pill">C</span>
++        <span class="pill">C++</span>
++        <span class="pill">Java</span>
++        <span class="pill">R</span>
++        <span class="pill">SQL</span>
++        <span class="pill">Linux</span>
++        <span class="pill">Networking (CCNA)</span>
++        <span class="pill">Blockchain</span>
++        <span class="pill">Quantum Computing</span>
++        <span class="pill">LaTeX</span>
++        <span class="pill">Leadership</span>
++        <span class="pill">Communication</span>
++        <span class="pill">Public Speaking</span>
++        <span class="pill">Time Management</span>
++        <span class="pill">Team Coordination</span>
++      </div>
++    </section>
++        <section id="volunteering">
++      <h2>Volunteering</h2>
++      <div class="card">
++        <strong>Scout</strong> · Bangladesh Scouts
++        <div class="meta">Jan 2010 – May 2018 · 8 yrs 5 mos</div>
++      </div>
++      <div class="card">
++        <strong>Quizzer</strong> · Government Science College Science Club
++        <div class="meta">Jul 2018 – Mar 2020</div>
++      </div>
++    </section>
++
++    <section id="honors">
++      <h2>Honors & Awards</h2>
++      <div class="card">
++        <strong>Board Scholarships</strong> · Board of Intermediate and Secondary Education, Sylhet
++        <p class="meta">Awarded in 2012 (PSC), 2015 (JSC), and 2018 (SSC)</p>
++      </div>
++    </section>
++
++    <section id="languages">
++      <h2>Languages</h2>
++      <div class="card">
++        <span class="pill">Bengali — Native or bilingual</span>
++        <span class="pill">English — Full professional</span>
++        <span class="pill">Hindi — Professional working</span>
++      </div>
++    </section>
++
++    <section id="contact">
++      <h2>Contact</h2>
++      <p>
++        <a href="mailto:smalakar2231068@bscse.uiu.ac.bd">smalakar2231068@bscse.uiu.ac.bd</a> ·
++        <a href="https://github.com/smalakar-is-here">GitHub</a> ·
++        <a href="https://www.linkedin.com/in/swagotam-malakar/">LinkedIn</a>
++      </p>
++      <p>
++        <a href="assets/resume/Swagotam-Malakar-Resume.pdf">Download Résumé (PDF)</a>
++      </p>
++    </section>
++  </main>
++
++  <footer class="container">
++    <p>© <span id="year"></span> Swagotam Malakar · Built with GitHub Pages</p>
++  </footer>
++  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
++</body>
++</html>
