@@ -4,22 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Swagotam Malakar</title>
-  <meta name="description" content="Swagotam Malakar — Researcher at United International University (UIU), Dhaka. Focused on bias detection and correction in Bengali news: detection, correction, explainability, transparency." />
+  <meta name="description" content="Swagotam Malakar — Researcher at Center for Emerging Networks and Technologies Research (CENTeR), United International University, Dhaka. Focused on network technologies, VANETs, and interdisciplinary computer science research." />
   <meta name="author" content="Swagotam Malakar" />
 
   <link rel="canonical" href="https://smalakar-is-here.github.io/" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232b6cb0'/%3E%3Cpath d='M35 65c0-15 30-15 30 0' stroke='white' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='35' cy='40' r='6' fill='white'/%3E%3Ccircle cx='65' cy='40' r='6' fill='white'/%3E%3C/svg%3E" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Swagotam Malakar — Researcher" />
-  <meta property="og:description" content="Bias-aware Bengali NLP for news: detection, correction, explainability, transparency. Researcher at UIU, Dhaka." />
+  <meta property="og:title" content="Swagotam Malakar — Lifelong Learner, Research Enthusiast, Aspiring Researcher in Computer Science" />
+  <meta property="og:description" content="Researcher at CENTeR, UIU, focusing on emerging network technologies, VANETs, NLP, and interdisciplinary computer science research." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://smalakar-is-here.github.io/" />
   <meta property="og:image" content="assets/images/profile.jpg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Swagotam Malakar — Researcher" />
-  <meta name="twitter:description" content="Bias-aware Bengali NLP for news: detection, correction, explainability, transparency." />
+  <meta name="twitter:title" content="Swagotam Malakar — Lifelong Learner, Research Enthusiast, Aspiring Researcher in Computer Science" />
+  <meta name="twitter:description" content="Researcher at CENTeR, UIU, focusing on emerging network technologies, VANETs, NLP, and interdisciplinary computer science research." />
   <meta name="twitter:image" content="assets/images/profile.jpg" />
 
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f5f9" />
@@ -27,6 +30,15 @@
 
   <link rel="preload" href="assets/images/profile.jpg" as="image" imagesrcset="assets/images/profile.jpg 1x" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- JavaScript files in correct loading order -->
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/navigation.js"></script>
+  <script defer src="js/animations.js"></script>
+  <script defer src="js/certificates.js"></script>
+  <script defer src="js/projects.js"></script>
+  <script defer src="js/research.js"></script>
   <script defer src="js/app.js"></script>
 </head>
 <body>
@@ -46,16 +58,15 @@
         </button>
         <ul id="nav-menu" class="nav-menu">
           <li><a href="#about">About</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#research">Research & Projects</a></li>
           <li><a href="#publications">Publications</a></li>
+          <li><a href="#research-methodologies">Methodologies</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="button button--ghost" href="assets/resume/Swagotam-Malakar-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <li><a class="button button--primary" href="assets/resume/Swagotam-Malakar-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
           <li>
-            <button id="theme-toggle" class="button button--ghost" type="button" aria-label="Toggle color theme">Theme</button>
+            <button id="theme-toggle" class="button button--ghost" type="button" aria-label="Toggle color theme"><i class="fas fa-adjust"></i></button>
           </li>
         </ul>
       </nav>
@@ -72,18 +83,19 @@
             loading="eager"
             decoding="async"
             class="avatar"
+            width="220"
+            height="220"
           />
         </div>
         <div class="hero-copy">
           <h1>Swagotam Malakar</h1>
-          <p class="kicker">Detection • Correction • Explainability • Transparency</p>
-          <p class="meta">Dhaka, Bangladesh — Researcher, United International University</p>
+          <p class="meta">Lifelong Learner, Research Enthusiast, Aspiring Researcher in Computer Science</p>
           <div class="hero-actions">
-            <a class="button" href="#research">Research</a>
-            <a class="button" href="#projects">Projects</a>
-            <a class="button" href="#publications">Publications</a>
-            <a class="button button--outline" href="#contact">Contact</a>
-            <a class="button button--ghost" href="assets/resume/Swagotam-Malakar-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a class="button" href="#research"><i class="fas fa-flask"></i> Research & Projects</a>
+            <a class="button" href="#research-methodologies"><i class="fas fa-project-diagram"></i> Methodologies</a>
+            <a class="button" href="#publications"><i class="fas fa-book"></i> Publications</a>
+            <a class="button button--outline" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a class="button button--ghost" href="assets/resume/Swagotam-Malakar-Resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-alt"></i> CV</a>
           </div>
           <ul class="social-links" aria-label="Profiles">
             <li><a href="https://github.com/smalakar-is-here" target="_blank" rel="noopener">GitHub</a></li>
@@ -97,37 +109,47 @@
     <section id="about" class="section">
       <div class="container">
         <h2>About</h2>
-        <p>I’m a researcher at UIU specializing in bias detection and correction for Bengali news headlines and articles. My work focuses on factual consistency, explainable decisions, and reproducible pipelines tailored for low-resource settings.</p>
+        <p class="lead">An Author in the living world…</p>
+        <p>I am a person of academia, a lifelong learner, and a researcher in the ever-evolving field of Computer Science. My journey in this realm is driven by an insatiable curiosity and a profound commitment to expanding the boundaries of knowledge.</p>
+        <p>Beyond Computer Science, I nurture a deep passion for Science and Technology broadly, with particular fascination for Astrophysics, Theoretical Physics, Applied Mathematics, and History. This interdisciplinary approach enriches my perspective and informs my research methodology.</p>
         <div class="about-grid">
+          <div class="about-card research-interests-card">
+            <h3><i class="fas fa-microscope"></i> Research Interests</h3>
+            <div class="research-tags">
+              <span class="research-tag">Machine Learning</span>
+              <span class="research-tag">Deep Learning</span>
+              <span class="research-tag">Data Mining</span>
+              <span class="research-tag">AGI</span>
+              <span class="research-tag">Computational Mathematics</span>
+              <span class="research-tag">Quantum Physics</span>
+            </div>
+            <p>My research spans the interconnected domains of Machine Learning (ML), Deep Learning (DL), Data Mining (DM), and Artificial General Intelligence (AGI), exploring their theoretical foundations and practical applications. I am particularly fascinated by the intersection of Computational Mathematics and Quantum Physics with computer science, investigating how mathematical principles and quantum concepts can enhance computational models. This interdisciplinary approach allows me to address complex problems at the frontier of scientific discovery.</p>
+          </div>
           <div class="about-card">
-            <h3>Focus</h3>
+            <h3>Academic Pursuits</h3>
             <ul>
-              <li>Media forensics</li>
-              <li>Transparency in journalism</li>
-              <li>Bias‑aware NLP</li>
+              <li>Computer Science</li>
+              <li>Astrophysics</li>
+              <li>Theoretical Physics</li>
+              <li>Applied Mathematics</li>
             </ul>
           </div>
           <div class="about-card">
-            <h3>Models</h3>
+            <h3>Methodologies</h3>
             <ul>
-              <li>BanglaBERT, mBERT, XLM‑R</li>
-              <li>Lightweight transformers</li>
-            </ul>
-          </div>
-          <div class="about-card">
-            <h3>Methods</h3>
-            <ul>
-              <li>Counterfactual data augmentation</li>
-              <li>Calibration</li>
-              <li>Fairness audits</li>
+              <li>Simulation Modeling</li>
+              <li>Data Mining Optimization</li>
+              <li>Network Performance Analysis</li>
+              <li>Bias Detection Frameworks</li>
             </ul>
           </div>
           <div class="about-card">
             <h3>Values</h3>
             <ul>
-              <li>Reproducibility</li>
-              <li>Rigorous evaluation</li>
-              <li>Open artifacts</li>
+              <li>Academic Integrity</li>
+              <li>Collaborative Research</li>
+              <li>Knowledge Dissemination</li>
+              <li>Continuous Learning</li>
             </ul>
           </div>
         </div>
@@ -136,57 +158,16 @@
 
     <section id="research" class="section section-alt">
       <div class="container">
-        <h2>Research</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Bias detection and correction in Bengali news</h3>
-            <p>Designing bias‑aware training and inference for headlines and articles, balancing detection with minimally invasive correction and human‑centered explanations.</p>
-            <ul class="tag-list">
-              <li>Bias detection</li>
-              <li>Counterfactuals</li>
-              <li>Explainability</li>
-              <li>Calibration</li>
-              <li>Reproducibility</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Factual consistency and assurance</h3>
-            <p>Evaluating and improving factuality in model outputs with reference checking, uncertainty‑aware scoring, and transparent reporting suitable for low‑resource settings.</p>
-            <ul class="tag-list">
-              <li>Factuality</li>
-              <li>Uncertainty</li>
-              <li>Low‑resource</li>
-              <li>Auditability</li>
-            </ul>
-          </article>
+        <h2>Research & Projects</h2>
+        <p class="lead">Ongoing investigations and scholarly contributions</p>
+        <div class="section-intro">
+          <p>The following projects represent my current research trajectory, demonstrating methodological rigor and academic inquiry. Each project explores critical questions at the intersection of computer science and its applications in society.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Projects</h2>
         <div id="projects-grid" class="cards">
-          <article class="card">
-            <h3>LifeLink — Community health triage</h3>
-            <p>Lightweight, privacy‑aware triage and referral flow for community health workers.</p>
-            <p><a class="button button--sm" href="assets/projects/lifelink/LifeLink-Overview.pdf" target="_blank" rel="noopener">Overview PDF</a></p>
-            <ul class="tag-list">
-              <li>Healthcare</li>
-              <li>Usability</li>
-              <li>Offline‑first</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Pharma Blockchain — Supply chain transparency</h3>
-            <p>Whitepaper exploring tamper‑evident drug provenance and recall workflows.</p>
-            <p><a class="button button--sm" href="assets/projects/blockchain/Pharma-Blockchain-Whitepaper.pdf" target="_blank" rel="noopener">Whitepaper PDF</a></p>
-            <ul class="tag-list">
-              <li>Blockchain</li>
-              <li>Traceability</li>
-              <li>Compliance</li>
-            </ul>
-          </article>
+          <!-- Projects will be rendered here by JavaScript -->
+        </div>
+        <div class="section-footer">
+          <p class="text-center"><em>These projects are under active development and represent ongoing research interests. Methodologies and findings are continuously refined as the work progresses.</em></p>
         </div>
       </div>
     </section>
@@ -194,28 +175,63 @@
     <section id="publications" class="section section-alt">
       <div class="container">
         <h2>Publications</h2>
-        <p>Selected work and works‑in‑progress.</p>
-        <ul class="pub-list">
-          <li>
-            <span class="pub-title">Bias‑Aware Bengali News: Detection, Minimal Correction, and Explainable Audits</span>
+        <p>No peer-reviewed publications yet, but actively working on research manuscripts in preparation.</p>
+        <div class="publication-cards">
+          <div class="pub-card">
+            <span class="pub-title">স্বরব্যাঞ্জন – Swarabyanjan: A Novel NLP Framework for Bias Detection in Bengali News Headlines and Articles</span>
             <span class="pub-meta">Working paper — manuscript in preparation</span>
-          </li>
-          <!-- Add more items as they are published -->
-        </ul>
+            <span class="pub-desc">Framework for detecting and analyzing bias in Bengali news content using NLP techniques.</span>
+          </div>
+          <div class="pub-card">
+            <span class="pub-title">AI Applications in Breast Cancer Detection: A Comprehensive Review</span>
+            <span class="pub-meta">Working paper — manuscript in preparation</span>
+            <span class="pub-desc">Exploring AI and machine learning techniques for early detection of breast cancer through medical imaging.</span>
+          </div>
+          <div class="pub-card">
+            <span class="pub-title">Optimizing Associative Rule Mining: A Time Complexity Reduction Approach</span>
+            <span class="pub-meta">Working paper — manuscript in preparation</span>
+            <span class="pub-desc">Development of optimized algorithms to reduce time complexity in associative rule mining.</span>
+          </div>
+          <div class="pub-card">
+            <span class="pub-title">Security and Scalability Challenges in Vehicular Ad-Hoc Networks (VANETs)</span>
+            <span class="pub-meta">Working paper — manuscript in preparation</span>
+            <span class="pub-desc">Research on VANET security frameworks and scalability models for next-generation vehicular communication.</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="experience" class="section">
       <div class="container">
         <h2>Experience</h2>
-        <article class="xp">
-          <h3>Researcher — United International University (CENTeR), Dhaka</h3>
-          <ul>
-            <li>Bias detection and correction for Bengali news; evaluation frameworks and fairness audits.</li>
-            <li>Reproducible NLP pipelines, dataset curation, and transparent reporting.</li>
-            <li>Collaboration with faculty and peers on applied research and publication prep.</li>
-          </ul>
-        </article>
+        <div class="timeline">
+          <article class="xp">
+            <div class="xp-header">
+              <div class="xp-title">
+                <h3>Researcher</h3>
+                <div class="xp-org">Center for Emerging Networks and Technologies Research (CENTeR), United International University, Dhaka</div>
+              </div>
+              <div class="xp-duration">
+                <span class="xp-meta current-position">Current Position</span>
+                <span class="xp-date">2024 - Present</span>
+              </div>
+            </div>
+            <div class="xp-content">
+              <ul>
+                <li>Conducting research on emerging network technologies, with a focus on security, scalability, and performance optimization, especially in Vehicular Ad-Hoc Networks (VANETs).</li>
+                <li>Collaborating on research publications and technical reports related to network security and optimization.</li>
+                <li>Developing simulation models for network performance analysis under various conditions and constraints.</li>
+                <li>Contributing to interdisciplinary research initiatives that bridge computer science with other scientific domains.</li>
+              </ul>
+              <div class="xp-skills">
+                <span class="xp-skill-tag">Network Security</span>
+                <span class="xp-skill-tag">VANETs</span>
+                <span class="xp-skill-tag">Simulation</span>
+                <span class="xp-skill-tag">Research</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -223,52 +239,126 @@
       <div class="container">
         <h2>Skills</h2>
         <div class="skills-grid">
-          <div>
-            <h3>NLP</h3>
-            <ul>
-              <li>Bias detection, mitigation, fairness</li>
-              <li>Factual consistency, explainability</li>
-              <li>BanglaBERT, mBERT, XLM‑R</li>
+          <div class="skill-category">
+            <h3>Programming & Technical</h3>
+            <ul class="skill-badges">
+              <li><span class="skill-badge">Python</span></li>
+              <li><span class="skill-badge">Java</span></li>
+              <li><span class="skill-badge">C</span></li>
+              <li><span class="skill-badge">SQL</span></li>
+              <li><span class="skill-badge">Git/GitHub</span></li>
+              <li><span class="skill-badge">Linux</span></li>
+              <li><span class="skill-badge">Bash/Shell</span></li>
+              <li><span class="skill-badge">HTML</span></li>
+              <li><span class="skill-badge">CSS</span></li>
+              <li><span class="skill-badge">JavaScript</span></li>
             </ul>
           </div>
-          <div>
-            <h3>Engineering</h3>
-            <ul>
-              <li>Reproducible pipelines, data annotation</li>
-              <li>Evaluation, calibration, monitoring</li>
-              <li>Python, PyTorch, Hugging Face</li>
+          <div class="skill-category">
+            <h3>Data Science & AI</h3>
+            <ul class="skill-badges">
+              <li><span class="skill-badge">Machine Learning</span></li>
+              <li><span class="skill-badge">Deep Learning</span></li>
+              <li><span class="skill-badge">Data Mining</span></li>
+              <li><span class="skill-badge">NLP</span></li>
+              <li><span class="skill-badge">Model Deployment</span></li>
+              <li><span class="skill-badge">Simulation & Analysis</span></li>
+              <li><span class="skill-badge">Bias Detection</span></li>
+              <li><span class="skill-badge">Explainability</span></li>
             </ul>
           </div>
-          <div>
-            <h3>Web</h3>
-            <ul>
-              <li>HTML, CSS, JavaScript</li>
-              <li>Responsive UI, accessibility</li>
-              <li>Design systems, UX writing</li>
+          <div class="skill-category">
+            <h3>Tools & Frameworks</h3>
+            <ul class="skill-badges">
+              <li><span class="skill-badge">TensorFlow</span></li>
+              <li><span class="skill-badge">PyTorch</span></li>
+              <li><span class="skill-badge">Scikit-learn</span></li>
+              <li><span class="skill-badge">Pandas</span></li>
+              <li><span class="skill-badge">NumPy</span></li>
+              <li><span class="skill-badge">Matplotlib</span></li>
+              <li><span class="skill-badge">Hugging Face</span></li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Research & Academic</h3>
+            <ul class="skill-badges">
+              <li><span class="skill-badge">Technical Writing</span></li>
+              <li><span class="skill-badge">Research Methodology</span></li>
+              <li><span class="skill-badge">Simulation Modeling</span></li>
+              <li><span class="skill-badge">Academic Presentation</span></li>
+              <li><span class="skill-badge">Data Annotation</span></li>
+              <li><span class="skill-badge">Evaluation Methods</span></li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <ul class="skill-badges">
+              <li><span class="skill-badge">English (Fluent)</span></li>
+              <li><span class="skill-badge">Bengali (Native)</span></li>
+              <li><span class="skill-badge">Hindi (Basic)</span></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="certificates" class="section">
+    <section id="research-methodologies" class="section">
       <div class="container">
-        <h2>Certificates</h2>
-        <div id="cert-grid" class="cards" data-js="render-certificates">
-          <!-- Rendered by app.js for maintainability -->
+        <h2>Research Methodologies & Future Directions</h2>
+        <p class="lead">Approaches and trajectories in my scholarly inquiry</p>
+        
+        <div class="methodology-grid">
+          <div class="methodology-card">
+            <h3><i class="fas fa-microscope"></i> Computational Methods</h3>
+            <p>My research employs rigorous computational approaches including:</p>
+            <ul class="methodology-list">
+              <li><strong>Simulation Modeling:</strong> Development of computational models to simulate complex systems and evaluate theoretical frameworks under controlled conditions.</li>
+              <li><strong>Statistical Analysis:</strong> Application of robust statistical methods to validate findings and ensure reproducibility of results.</li>
+              <li><strong>Algorithm Development:</strong> Creation of novel algorithms to address specific computational challenges in data processing and analysis.</li>
+            </ul>
+          </div>
+          
+          <div class="methodology-card">
+            <h3><i class="fas fa-project-diagram"></i> Interdisciplinary Approaches</h3>
+            <p>I integrate methodologies across disciplines to enrich research outcomes:</p>
+            <ul class="methodology-list">
+              <li><strong>Mixed-Methods Research:</strong> Combining qualitative and quantitative approaches to gain comprehensive insights into complex phenomena.</li>
+              <li><strong>Human-Centered Design:</strong> Incorporating user perspectives and needs assessment in technological development.</li>
+              <li><strong>Ethical Framework Analysis:</strong> Systematic examination of ethical implications in computational systems and AI applications.</li>
+            </ul>
+          </div>
+          
+          <div class="methodology-card future-directions">
+            <h3><i class="fas fa-road"></i> Future Research Directions</h3>
+            <p>My scholarly trajectory aims to explore:</p>
+            <ul class="methodology-list">
+              <li><strong>Explainable AI Systems:</strong> Developing frameworks for transparent and interpretable machine learning models, particularly for applications in critical domains.</li>
+              <li><strong>Computational Linguistics in Low-Resource Languages:</strong> Extending NLP capabilities to underrepresented languages with limited digital resources.</li>
+              <li><strong>Secure Distributed Systems:</strong> Investigating novel approaches to security and privacy in decentralized computational environments.</li>
+              <li><strong>Ethical AI Development:</strong> Formulating methodological approaches to incorporate ethical considerations throughout the AI development lifecycle.</li>
+            </ul>
+          </div>
+          
+          <div class="methodology-card">
+            <h3><i class="fas fa-graduation-cap"></i> Academic Pipeline</h3>
+            <p>Current works in progress and planned scholarly contributions:</p>
+            <ul class="methodology-list">
+              <li><strong>Manuscript in Preparation:</strong> "Bias Detection Frameworks for Low-Resource Languages: Challenges and Opportunities"</li>
+              <li><strong>Proposed Study:</strong> "Comparative Analysis of Privacy-Preserving Techniques in Healthcare Informatics"</li>
+              <li><strong>Literature Review:</strong> "Emerging Approaches in Explainable AI for Critical Applications"</li>
+              <li><strong>Collaborative Research:</strong> "Cross-Cultural Perspectives on AI Ethics and Governance"</li>
+            </ul>
+          </div>
         </div>
-        <noscript>
-          <p>JavaScript is disabled. Browse certificates directly in the <a href="assets/certificates/">certificates folder</a>.</p>
-        </noscript>
       </div>
     </section>
 
     <section id="contact" class="section section-alt">
       <div class="container">
         <h2>Contact</h2>
-        <p>If you’d like to collaborate or discuss research, feel free to reach out.</p>
+        <p>If you'd like to collaborate or discuss research, feel free to reach out.</p>
         <ul class="contact-list">
-          <li><strong>Email:</strong> <a href="mailto:swagotam.malakar@gmail.com?subject=Inquiry%20from%20Portfolio">swagotam.malakar@gmail.com</a></li>
+          <li><strong>Email:</strong> <a href="mailto:swagotam.cs@gmail.com?subject=Inquiry%20from%20Portfolio">swagotam.cs@gmail.com</a></li>
           <li><strong>GitHub:</strong> <a href="https://github.com/smalakar-is-here" target="_blank" rel="noopener">github.com/smalakar-is-here</a></li>
           <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/swagotam-malakar" target="_blank" rel="noopener">linkedin.com/in/swagotam-malakar</a></li>
           <li><strong>Resume:</strong> <a href="assets/resume/Swagotam-Malakar-Resume.pdf" target="_blank" rel="noopener">Download PDF</a></li>
@@ -292,7 +382,8 @@
     "jobTitle": "Researcher",
     "affiliation": {
       "@type": "CollegeOrUniversity",
-      "name": "United International University"
+      "name": "United International University",
+      "department": "Center for Emerging Networks and Technologies Research (CENTeR)"
     },
     "address": {
       "@type": "PostalAddress",
@@ -307,14 +398,17 @@
       "https://scholar.google.com/citations?user=swagotam-malakar"
     ],
     "knowsAbout": [
-      "Bias detection",
-      "NLP",
-      "Bengali language",
-      "Explainable AI",
-      "Factual consistency"
+      "Vehicular Ad-Hoc Networks (VANETs)",
+      "Network Security",
+      "Natural Language Processing",
+      "AI in Healthcare",
+      "Data Mining Optimization",
+      "Astrophysics",
+      "Theoretical Physics",
+      "Applied Mathematics"
     ],
-    "headline": "Swagotam Malakar — Detection, Correction, Explainability, Transparency",
-    "description": "Researcher focused on bias‑aware NLP for Bengali news with reproducible pipelines, fairness audits, and explainable decisions."
+    "headline": "Swagotam Malakar — Academic Researcher & Computer Scientist",
+    "description": "Researcher at CENTeR focusing on emerging network technologies, VANETs, NLP, and interdisciplinary computer science research."
   }
   </script>
 </body>
